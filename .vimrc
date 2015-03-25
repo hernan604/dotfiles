@@ -80,7 +80,7 @@ au! BufWritePost .vimrc source %
 :ab cdetach $c->detach( );
 :ab creqmethod $c->req->method eq
 :ab cresbody $c->res->body('');
-:ab jqueryajax $.ajax({<CR>url: '',<CR>cache: false,<CR>success: function (data) {<CR>},<CR>type: 'POST'<CR>});
+:ab jqueryajax $.ajax({<CR>url: '',<CR>cache: false,<CR>success: function (data) {<CR>},<CR>type: 'POST'<CR>,dataType        : 'jsonp',jsonpCallback   : 'simulador_dados_jsonp',data            : {},contentType     : 'application/json'});
 :ab jqueryeach $.each(data, function(i,item){});
 :ab documentready $(document).ready(function () {<cr>});
 :ab fhtypeselect type => 'Select', <cr>options => [ { label => 35 , value => 35 } ],
@@ -108,4 +108,15 @@ au! BufWritePost .vimrc source %
 :ab moosehas has  => (<CR>is => '',<CR>isa => '',<CR>default => '',<CR>);
 :ab hasisisadef has => (<CR>is => '',<CR>isa => '',<CR>default => '',<CR>);
 
+":map <F2> :echo 'Current time is ' . ls<CR>
+":map <F2> "zyiw:exe "vs ".@z.""<CR>
+":map <F3> "zyiw:exe "! ls -all ".@z.""<CR>
+" digitar uma palavra, posicionar o cursor e apertar F3. isso vai dar um ls -la na palavra em baixo do cursor
+
+:map <F4> "zyiw:exe "! perl /home/hernan/p/caniuse/caniuse.pl ".@z.""<CR>
+
+" lalal
+:map <leader>jt  <Esc>:%!json_xs -f json -t json-pretty<CR>
+
 set nomodeline
+
