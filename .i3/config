@@ -27,7 +27,7 @@ font pango:DejaVu Sans Mono 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec xterm -bg black -fg white
+bindsym $mod+Return exec xterm -bg 'rgb:19/19/19' -fg 'rgb:FB/DF/B5'
 
 # kill focused window
 bindsym $mod+Shift+q kill
