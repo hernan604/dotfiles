@@ -26,3 +26,9 @@ alias irssi=$HOME/irssi/bin/irssi $@
 
 #NVM
 source ~/.nvm/nvm.sh
+
+#JS spidermonkey
+export PATH="$PATH:/usr/include/js-17.0"
+
+#packer - hashicorp
+export PATH="$PATH:$HOME/packer"
