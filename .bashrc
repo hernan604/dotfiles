@@ -1,5 +1,6 @@
 # PERLBREW
 source ~/perl5/perlbrew/etc/bashrc
+source ~/.user.env
 
 #export NVM_DIR="/home/hernan/.nvm"
 #[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -32,3 +33,18 @@ export PATH="$PATH:/usr/include/js-17.0"
 
 #packer - hashicorp
 export PATH="$PATH:$HOME/packer"
+
+
+# keyboard layout
+if [ $DOTFILES_MODE == "home" ]; then
+    `setxkbmap us`
+    `xrandr --output LVDS-1-0 --mode 1600x900 --output VGA-1-0 --mode 1680x1050 --right-of LVDS-1-0`
+else 
+    `setxkbmap br`
+    `xrandr --output DVI-0 --mode 1280x1024 --left-of DVI-1 --output DVI-1 --mode 1600x900`
+fi
+
+`xset r rate 250 50`
+
+
+# screens

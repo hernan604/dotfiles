@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 PWD=`pwd`
-IGNORE_FILES="README"
+IGNORE_FILES="README init.sh .gitignore "
 FILES=$(git ls-files)
 for f in $FILES
     do
