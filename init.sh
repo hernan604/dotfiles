@@ -6,8 +6,10 @@ FILES=$(git ls-files)
 for f in $FILES
     do
         echo $f
-        if [ ! -f $HOME/$f ]
+        if [ ! -e $HOME/$f ]
             then
-            [[ $IGNORE_FILES =~ $f ]] || `ln -s $PWD/$f $HOME/$f`
+            [[  $f =~ $IGNORE_FILES ]] || `ln -s $PWD/$f $HOME/$f`
+        else
+            echo "$HOME/$f already exists. not overwriting"
         fi
     done
