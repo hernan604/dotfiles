@@ -1,0 +1,6 @@
+{
+    caller_info => 1,
+    colour => {
+        array => 'bright_blue',
+    },
+};
