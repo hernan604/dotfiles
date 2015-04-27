@@ -1,6 +1,8 @@
 {
-    caller_info => 1,
-    colour => {
-        array => 'bright_blue',
-    },
-};
+    colored        => 1,
+    hash_separator => ':  ',
+    return_value   => 'pass',
+    use_prototypes => 0,
+    caller_info    => 1,
+#   filters        => { -external => [ 'DateTime', 'DB', 'JSON' ], },
+}
