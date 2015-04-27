@@ -118,5 +118,7 @@ au! BufWritePost .vimrc source %
 " lalal
 :map <leader>jt  <Esc>:%!json_xs -f json -t json-pretty<CR>
 
+let g:netrw_liststyle=3
+
 set nomodeline
 
