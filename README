@@ -1,1 +1,5 @@
-my .dotfiles
+Create a ~.user.env file and define which mode to use
+
+vim ~/.user.env 
+
+    export DOTFILES_MODE="home"
