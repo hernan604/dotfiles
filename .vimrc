@@ -190,8 +190,8 @@ let g:netrw_liststyle=3
 
 ":colorscheme hernan604-no-contrast
 
-:colorscheme solarized
 :set background=dark
+:colorscheme sandydune 
 
 set nomodeline
 
