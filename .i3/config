@@ -185,6 +185,10 @@ bindsym $mod+r mode "resize"
 # bar {
 #         status_command i3status
 # }
+client.focused              #3276E8 #3276E8 #ffffff
+client.unfocused            #5f676a #5f676a #ffffff
+client.focused_inactive     #222222 #222222 #888888
+client.urgent               #900000 #900000 #ffffff
 bar {
         position top
         tray_output primary
@@ -194,12 +198,13 @@ bar {
                 separator  #ff0000
                 statusline #ffff00
 
-                focused_workspace  #44bbff #3276E8 #ffffff
-                active_workspace   #333333 #5f676a #ffffff
-                inactive_workspace #333333 #222222 #888888
-                urgent_workspace   #2f343a #900000 #ffffff
+                focused_workspace  #3276E8 #3276E8 #ffffff
+                active_workspace   #5f676a #5f676a #ffffff
+                inactive_workspace #222222 #222222 #888888
+                urgent_workspace   #900000 #900000 #ffffff
         }
-        status_command i3status 
+#       status_command i3status 
+        status_command ~/.i3/i3status.sh
 }
 
 # place correct monitor
