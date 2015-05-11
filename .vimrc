@@ -192,6 +192,7 @@ let g:netrw_liststyle=3
 
 :set background=dark
 :colorscheme sandydune 
+set term=xterm
 
 set nomodeline
 
