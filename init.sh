@@ -14,6 +14,7 @@ for f in {".bashrc",".dataprinter",".mc",".screenrc",".vimrc",".Xresources",".i3
 # Vim color schemes
 if [ ! -e $HOME/.vim/colors ]
 then
+    echo "Creating ~/.vim/colors"
     if [ ! -e $HOME/.vim/ ]
     then
         mkdir $HOME/.vim
