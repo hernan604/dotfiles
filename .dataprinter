@@ -1,0 +1,8 @@
+{
+    colored        => 1,
+    hash_separator => ':  ',
+    return_value   => 'pass',
+    use_prototypes => 1,
+    caller_info    => 1,
+#   filters        => { -external => [ 'DateTime', 'DB', 'JSON' ], },
+}

@@ -1,13 +1,31 @@
 #!/usr/bin/env bash
 
 PWD=`pwd`
-IGNORE_FILES="README init.sh .gitignore "
-FILES=$(git ls-files)
-for f in $FILES
+##FILES=$(git ls-files)
+for f in {".bashrc",".dataprinter",".mc",".screenrc",".vimrc",".Xresources",".i3status.conf"}
     do
-        echo $f
-        if [ ! -f $HOME/$f ]
+        echo "Working on: $f"
+        if [ ! -e $HOME/$f ]
             then
-            [[ $IGNORE_FILES =~ $f ]] || `ln -s $PWD/$f $HOME/$f`
+            `ln -s $PWD/$f $HOME/$f`
         fi
     done
+
+# Vim color schemes
+if [ ! -e $HOME/.vim/colors ]
+then
+    if [ ! -e $HOME/.vim/ ]
+    then
+        mkdir $HOME/.vim
+    fi
+        ln -s "$HOME/dotfiles/vim-themes" "$HOME/.vim/colors"
+fi
+
+# i3
+ln -s $HOME/dotfiles/.i3/i3status.sh $HOME/.i3/i3status.sh
+
+# Fonts
+./install_gohufont.sh
+
+echo "updating X-resources"
+xrdb -merge "$HOME/.Xresources"

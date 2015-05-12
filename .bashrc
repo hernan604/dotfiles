@@ -1,6 +1,12 @@
 # PERLBREW
 source ~/perl5/perlbrew/etc/bashrc
-source ~/.user.env
+
+if [[ -e $HOME/.user.env ]]
+    then
+    source ~/.user.env
+else
+    echo "[.bashrc] File not found: '$HOME/.user.env'. Please create it. ";
+fi
 
 #export NVM_DIR="/home/hernan/.nvm"
 #[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -36,7 +42,8 @@ export PATH="$PATH:$HOME/packer"
 
 
 # keyboard layout
-if [ $DOTFILES_MODE == "ET" ]; then
+if [ -z ${DOTFILES_MODE+x} ] && [ "$DOTFILES_MODE" == "ET" ]
+    then
     `setxkbmap -layout us -variant intl`
     `xrandr --output LVDS-1-0 --mode 1600x900 --output VGA-1-0 --mode 1680x1050 --right-of LVDS-1-0`
     `xrandr --output LVDS1 --mode 1600x900 --output VGA1 --mode 1680x1050 --right-of LVDS1`
@@ -48,5 +55,9 @@ fi
 `xset r rate 250 50`
 
 
+<<<<<<< HEAD
 # screens
 source ~/perl5/perlbrew/etc/bashrc
+=======
+if [[ -e $HOME/.Xresources ]]; then xrdb -merge $HOME/.Xresources ; fi
+>>>>>>> 100de8bf37416d5334985ba0c732508f7f64bce4
