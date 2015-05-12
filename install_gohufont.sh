@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 if [ ! -e $HOME/.fonts/gohufont-2.0 ]
     then
 echo "Installing gohufont"
