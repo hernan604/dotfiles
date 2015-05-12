@@ -30,3 +30,10 @@ ln -s $HOME/dotfiles/.i3/i3status.sh $HOME/.i3/i3status.sh
 
 echo "updating X-resources"
 xrdb -merge "$HOME/.Xresources"
+
+# Remove no-bitmap file and allow custom fonts in X
+if [ -e "sudo rm /etc/fonts/conf.d/70-no-bitmaps.conf" ]
+    then
+    echo "Removing *no-bitmap* to allow custom fonts in X: rm /etc/fonts/conf.d/70-no-bitmaps.conf"
+    sudo rm /etc/fonts/conf.d/70-no-bitmaps.conf
+fi
