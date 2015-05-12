@@ -36,9 +36,10 @@ export PATH="$PATH:$HOME/packer"
 
 
 # keyboard layout
-if [ $DOTFILES_MODE == "home" ]; then
-    `setxkbmap us`
+if [ $DOTFILES_MODE == "ET" ]; then
+    `setxkbmap -layout us -variant intl`
     `xrandr --output LVDS-1-0 --mode 1600x900 --output VGA-1-0 --mode 1680x1050 --right-of LVDS-1-0`
+    `xrandr --output LVDS1 --mode 1600x900 --output VGA1 --mode 1680x1050 --right-of LVDS1`
 else 
     `setxkbmap br`
     `xrandr --output DVI-0 --mode 1280x1024 --left-of DVI-1 --output DVI-1 --mode 1600x900`
@@ -48,3 +49,4 @@ fi
 
 
 # screens
+source ~/perl5/perlbrew/etc/bashrc
