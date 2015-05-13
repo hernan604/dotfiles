@@ -30,3 +30,13 @@ ln -s $HOME/dotfiles/.i3/i3status.sh $HOME/.i3/i3status.sh
 
 echo "updating X-resources"
 xrdb -merge "$HOME/.Xresources"
+
+echo "
+X11 SECURITY:
+
+    Include the following in /etc/X11/xorg.conf
+
+    Section "ServerFlags"
+        Option "DontVTSwitch" "true"
+    EndSection
+"
