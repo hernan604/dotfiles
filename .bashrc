@@ -56,3 +56,5 @@ fi
 `xset r rate 250 50`
 
 if [[ -e $HOME/.Xresources ]]; then xrdb -merge $HOME/.Xresources ; fi
+
+alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
