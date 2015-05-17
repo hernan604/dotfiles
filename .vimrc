@@ -191,7 +191,7 @@ let g:netrw_liststyle=3
 ":colorscheme hernan604-no-contrast
 
 :set background=dark
-:colorscheme sandydune 
+:colorscheme default
 set term=xterm
 
 set nomodeline
