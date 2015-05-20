@@ -192,7 +192,7 @@ let g:netrw_liststyle=3
 
 :set background=dark
 :colorscheme default
-set term=xterm
+"set term=xterm
 
 set nomodeline
 
