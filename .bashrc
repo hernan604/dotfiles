@@ -67,7 +67,7 @@ dynamic_bash_prompt() {
     elif [ "$DIR" = "/home/hernan" ]; then
         export PS1="[\e[0;32m\u\e[m\e[0;33m@\e[0;31m\h\e[m \e[1;33m\W\e[m] $ " ;
     else 
-        export PS1="[\w]";
+        export PS1="[\w] $ ";
     fi; 
 }
 PROMPT_COMMAND="dynamic_bash_prompt"
