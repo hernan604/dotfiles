@@ -33,6 +33,8 @@ Plugin 'L9'
 " Plugin vim-syntax-extra
 Plugin 'https://github.com/justinmk/vim-syntax-extra.git'
 
+Plugin 'pangloss/vim-javascript'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
