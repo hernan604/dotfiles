@@ -187,6 +187,18 @@ au! BufWritePost .vimrc source %
 " lalal
 :map <leader>jt  <Esc>:%!json_xs -f json -t json-pretty<CR>
 
+" js_beautify = cpanm JavaScript::Beautifier
+:map <leader>jb  <Esc>:%!js_beautify.pl %:p<CR>
+
+
+""""""""""""""""""""
+" vim get the name of current files:
+" http://vim.wikia.com/wiki/Get_the_name_of_the_current_file
+" :echo @%   def/my.txt  directory/name of file
+" :echo expand('%:t')     my.txt  name of file ('tail')
+" :echo expand('%:p')     /abc/def/my.txt     full path
+" :echo expand('%:p:h')   /abc/def    directory containing file ('head') 
+
 let g:netrw_liststyle=3
 
 
