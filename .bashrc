@@ -56,3 +56,18 @@ fi
 `xset r rate 250 50`
 
 if [[ -e $HOME/.Xresources ]]; then xrdb -merge $HOME/.Xresources ; fi
+
+alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
+
+
+dynamic_bash_prompt() {
+    DIR=`pwd`;
+    if [[ "$DIR" == *webdrive*  ]]; then
+        export PS1="[\e[0;32m\u\e[m\e[0;33m@\e[0;31m\h\e[m \e[0;37m\W\e[m] [\e[1;31m webdrive\e[m ] $ " ;
+    elif [ "$DIR" = "/home/hernan" ]; then
+        export PS1="[\e[0;32m\u\e[m\e[0;33m@\e[0;31m\h\e[m \e[1;33m\W\e[m] $ " ;
+    else 
+        export PS1="[\w] $ ";
+    fi; 
+}
+PROMPT_COMMAND="dynamic_bash_prompt"

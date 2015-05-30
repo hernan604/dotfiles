@@ -2,9 +2,9 @@
 
 PWD=`pwd`
 ##FILES=$(git ls-files)
-for f in {".bashrc",".dataprinter",".mc",".screenrc",".vimrc",".Xresources",".i3status.conf",".tmux.conf"}
+for f in ".bashrc" ".dataprinter" ".mc" ".screenrc" ".vimrc" ".Xresources" ".i3status.conf" ".tmux.conf"
     do
-        echo "Working on: $f"
+        echo "=> Working on: $f"
         if [ ! -e $HOME/$f ]
             then
             `ln -s $PWD/$f $HOME/$f`
@@ -14,7 +14,7 @@ for f in {".bashrc",".dataprinter",".mc",".screenrc",".vimrc",".Xresources",".i3
 # Vim color schemes
 if [ ! -e $HOME/.vim/colors ]
 then
-    echo "Creating ~/.vim/colors"
+    echo "=> Creating ~/.vim/colors"
     if [ ! -e $HOME/.vim/ ]
     then
         mkdir $HOME/.vim
@@ -29,11 +29,19 @@ ln -s $HOME/dotfiles/.i3/config $HOME/.i3/config
 # Fonts
 ./install_gohufont.sh
 
-echo "updating X-resources"
+echo "=> updating X-resources"
 xrdb -merge "$HOME/.Xresources"
 
+# Remove no-bitmap file and allow custom fonts in X
+if [ -e "sudo rm /etc/fonts/conf.d/70-no-bitmaps.conf" ]
+    then
+    echo "=> Removing *no-bitmap* to allow custom fonts in X: rm /etc/fonts/conf.d/70-no-bitmaps.conf"
+    sudo rm /etc/fonts/conf.d/70-no-bitmaps.conf
+fi
+
 echo "
-X11 SECURITY:
+X11 SECURITY
+------------
 
     Include the following in /etc/X11/xorg.conf
 
@@ -41,7 +49,14 @@ X11 SECURITY:
         Option "DontVTSwitch" "true"
     EndSection
 
-ENABLE BITMAP FONTS:
+ENABLE BITMAP FONTS
+-------------------
 
     rm /etc/fonts/conf.d/70-no-bitmaps.conf
+
+CRONTAB
+-------
+
+    Keel $HOME/.external_ip updated 
+    */5 * * * * $HOME/dotfiles/ip_update.sh
 "
