@@ -24,6 +24,7 @@ fi
 
 # i3
 ln -s $HOME/dotfiles/.i3/i3status.sh $HOME/.i3/i3status.sh
+ln -s $HOME/dotfiles/.i3/config $HOME/.i3/config
 
 # Fonts
 ./install_gohufont.sh
@@ -39,4 +40,8 @@ X11 SECURITY:
     Section "ServerFlags"
         Option "DontVTSwitch" "true"
     EndSection
+
+ENABLE BITMAP FONTS:
+
+    rm /etc/fonts/conf.d/70-no-bitmaps.conf
 "
