@@ -63,9 +63,11 @@ alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
 dynamic_bash_prompt() {
     DIR=`pwd`;
     if [[ "$DIR" == *webdrive*  ]]; then
-        export PS1="[\e[0;32m\u\e[m\e[0;33m@\e[0;31m\h\e[m \e[0;37m\W\e[m] [\e[1;31m webdrive\e[m ] $ " ;
-    elif [ "$DIR" = "/home/hernan" ]; then
-        export PS1="[\e[0;32m\u\e[m\e[0;33m@\e[0;31m\h\e[m \e[1;33m\W\e[m] $ " ;
+#       export PS1="[\e[0;32m\u\e[m\e[0;33m@\e[0;31m\h\e[m \e[0;37m\W\e[m] [\e[1;31m webdrive\e[m ] $ " ;
+        export PS1='\u@\h \w [ *webdrive* ] $ '
+    elif [[ "$DIR" == */home/hernan* ]]; then
+        export PS1='\u@\h \w $ '
+#       export PS1="[\e[0;32m\u\e[m\e[0;33m@\e[0;31m\h\e[m \e[1;33m\W\e[m] $ " ;
     else 
         export PS1="[\w] $ ";
     fi; 
