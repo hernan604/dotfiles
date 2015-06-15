@@ -71,3 +71,12 @@ dynamic_bash_prompt() {
     fi; 
 }
 PROMPT_COMMAND="dynamic_bash_prompt"
+
+# Android SDK + NDK: http://perltricks.com/article/97/2014/6/16/How-to-build-Perl-on-Android-4-4
+export PATH=$PATH:$HOME/android-sdk-linux/tools:$HOME/android-sdk-linux/platform
+export ANDROID_NDK=$HOME/android-sdk-linux/android-ndk-r10e
+export TARGET_ARCH=arm-linux-androideabi
+export ANDROID_TOOLCHAIN=/tmp/my-toolchain-arm-linux-androideabi
+export SYSROOT=$ANDROID_TOOLCHAIN/sysroot
+export TARGETDIR=/mnt/asec/perl
+export PATH=$PATH:$ANDROID_NDK/toolchains/$TARGET_ARCH-4.8/prebuilt/linux-x86_64/bin

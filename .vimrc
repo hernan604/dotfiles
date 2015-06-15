@@ -182,7 +182,8 @@ au! BufWritePost .vimrc source %
 ":map <F3> "zyiw:exe "! ls -all ".@z.""<CR>
 " digitar uma palavra, posicionar o cursor e apertar F3. isso vai dar um ls -la na palavra em baixo do cursor
 
-:map <F4> "zyiw:exe "! perl /home/hernan/p/caniuse/caniuse.pl ".@z.""<CR>
+":map <F4> "zyiw:exe "! perl /home/hernan/p/caniuse/caniuse.pl ".@z.""<CR>
+:map <F4> "zyiw:exe "! caniuse ".@z.""<CR>
 
 " lalal
 :map <leader>jt  <Esc>:%!json_xs -f json -t json-pretty<CR>
@@ -208,5 +209,19 @@ let g:netrw_liststyle=3
 :colorscheme default
 set term=xterm
 
+"TYPE \tt1
+:map <leader>tt1  <Esc>:%!perl -e 'my $i=0; while (<STDIN>) {print (($i++).$_)}' %:p<CR>
+"TYPE \tt2
+:map <leader>tt2  <Esc>:%!perl -e 'my $text = join "", <STDIN>; print "TXT$text"' %:p<CR>
+
+":command Cani :%!caniuse &&getcmdline()
+
 set nomodeline
 
+
+
+":r !caniuse 
+command! -nargs=+ Caniuse !caniuse <args>
+
+"Example of command using: :Lss -la /
+command! -nargs=+ Lss !ls <args>
