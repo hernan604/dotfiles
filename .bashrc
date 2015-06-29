@@ -82,3 +82,9 @@ export ANDROID_TOOLCHAIN=/tmp/my-toolchain-arm-linux-androideabi
 export SYSROOT=$ANDROID_TOOLCHAIN/sysroot
 export TARGETDIR=/mnt/asec/perl
 export PATH=$PATH:$ANDROID_NDK/toolchains/$TARGET_ARCH-4.8/prebuilt/linux-x86_64/bin
+
+if [ -e /usr/share/terminfo/x/xterm-256color ]; then
+        export TERM='xterm-256color'
+else
+        export TERM='xterm-color'
+fi

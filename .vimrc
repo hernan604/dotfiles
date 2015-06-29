@@ -56,6 +56,8 @@ filetype plugin indent on    " required
 " Wakatime
 :Bundle 'wakatime/vim-wakatime'
 
+Plugin 'bling/vim-airline'
+
 
 
 
@@ -99,7 +101,7 @@ let perl_want_scope_in_variables=1
 let perl_extended_vars=1
 let perl_include_pod=1
 let perl_fold=1
-hi Folded ctermfg=red
+"hi Folded ctermfg=red
 set smartindent
 set wildmenu
 "perlsupport
@@ -205,9 +207,8 @@ let g:netrw_liststyle=3
 
 ":colorscheme hernan604-no-contrast
 
-:set background=dark
-:colorscheme default
-set term=xterm
+"set term=xterm
+
 
 "TYPE \tt1
 :map <leader>tt1  <Esc>:%!perl -e 'my $i=0; while (<STDIN>) {print (($i++).$_)}' %:p<CR>
@@ -225,3 +226,12 @@ command! -nargs=+ Caniuse !caniuse <args>
 
 "Example of command using: :Lss -la /
 command! -nargs=+ Lss !ls <args>
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline_powerline_fonts = 1
+set laststatus=2
+
+":set background=dark
+:colorscheme hernan604-no-contrast
