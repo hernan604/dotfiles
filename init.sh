@@ -2,7 +2,7 @@
 
 PWD=`pwd`
 ##FILES=$(git ls-files)
-for f in ".bashrc" ".dataprinter" ".mc" ".screenrc" ".vimrc" ".Xresources" ".i3status.conf" ".tmux.conf"
+for f in ".bashrc" ".dataprinter" ".mc" ".screenrc" ".vimrc" ".Xresources" ".i3status.conf" ".tmux.conf" ".perltidyrc"
     do
         echo "=> Working on: $f"
         if [ ! -e $HOME/$f ]

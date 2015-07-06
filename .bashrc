@@ -63,11 +63,28 @@ alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
 dynamic_bash_prompt() {
     DIR=`pwd`;
     if [[ "$DIR" == *webdrive*  ]]; then
-        export PS1="[\e[0;32m\u\e[m\e[0;33m@\e[0;31m\h\e[m \e[0;37m\W\e[m] [\e[1;31m webdrive\e[m ] $ " ;
-    elif [ "$DIR" = "/home/hernan" ]; then
-        export PS1="[\e[0;32m\u\e[m\e[0;33m@\e[0;31m\h\e[m \e[1;33m\W\e[m] $ " ;
+#       export PS1="[\e[0;32m\u\e[m\e[0;33m@\e[0;31m\h\e[m \e[0;37m\W\e[m] [\e[1;31m webdrive\e[m ] $ " ;
+        export PS1='\u@\h \w [ *webdrive* ] $ '
+    elif [[ "$DIR" == */home/hernan* ]]; then
+        export PS1='\u@\h \w $ '
+#       export PS1="[\e[0;32m\u\e[m\e[0;33m@\e[0;31m\h\e[m \e[1;33m\W\e[m] $ " ;
     else 
         export PS1="[\w] $ ";
     fi; 
 }
 PROMPT_COMMAND="dynamic_bash_prompt"
+
+# Android SDK + NDK: http://perltricks.com/article/97/2014/6/16/How-to-build-Perl-on-Android-4-4
+export PATH=$PATH:$HOME/android-sdk-linux/tools:$HOME/android-sdk-linux/platform
+export ANDROID_NDK=$HOME/android-sdk-linux/android-ndk-r10e
+export TARGET_ARCH=arm-linux-androideabi
+export ANDROID_TOOLCHAIN=/tmp/my-toolchain-arm-linux-androideabi
+export SYSROOT=$ANDROID_TOOLCHAIN/sysroot
+export TARGETDIR=/mnt/asec/perl
+export PATH=$PATH:$ANDROID_NDK/toolchains/$TARGET_ARCH-4.8/prebuilt/linux-x86_64/bin
+
+if [ -e /usr/share/terminfo/x/xterm-256color ]; then
+        export TERM='xterm-256color'
+else
+        export TERM='xterm-color'
+fi

@@ -7,16 +7,18 @@
 
 
 XTerm*faceName: Gohufont
+!XTerm*faceName: Monaco
+!XTerm*faceName: Inconsolata
+!XTerm*faceName: Profont
 xterm*faceSize: 9
 ! xterm*vt100*geometry: 80x60
-xterm*saveLines: 16384
 xterm*loginShell: true
 XTerm*charClass: 33:48,37:48,43:48,45-47:48,64:48,126:48,95:48
-xterm*termName: xterm-color
+!xterm*termName: xterm-color
 xterm*eightBitInput: false
 XTerm*SaveLines: 30000
 
-! XTerm*cursorColor: yellow
+XTerm*cursorColor: #3276E8
 XTerm*cursorBlink: true
 
 !   !BLK Cursor
