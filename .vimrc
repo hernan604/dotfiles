@@ -151,7 +151,7 @@ au! BufWritePost .vimrc source %
 :ab cdetach $c->detach( );
 :ab creqmethod $c->req->method eq
 :ab cresbody $c->res->body('');
-:ab jqueryajax $.ajax({<CR>url: '',<CR>cache: false,<CR>success: function (data) {<CR>},<CR>type: 'POST'<CR>,dataType        : 'jsonp',jsonpCallback   : 'simulador_dados_jsonp',data            : {},contentType     : 'application/json'});
+:ab jqueryajax $.ajax({<CR>url: '',<CR>cache: false,<CR>success: function (data) {<CR>},<CR>type: 'POST'<CR>,dataType        : 'jsonp',<CR>jsonpCallback   : 'simulador_dados_jsonp',<CR>data            : {},<CR>contentType     : 'application/json'<CR>});
 :ab jqueryeach $.each(data, function(i,item){});
 :ab documentready $(document).ready(function () {<cr>});
 :ab fhtypeselect type => 'Select', <cr>options => [ { label => 35 , value => 35 } ],
@@ -231,7 +231,8 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline_powerline_fonts = 1
+
 set laststatus=2
 
-":set background=dark
-:colorscheme hernan604-no-contrast
+:set background=dark
+:colorscheme kalahari

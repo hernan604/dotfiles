@@ -84,7 +84,23 @@ export TARGETDIR=/mnt/asec/perl
 export PATH=$PATH:$ANDROID_NDK/toolchains/$TARGET_ARCH-4.8/prebuilt/linux-x86_64/bin
 
 if [ -e /usr/share/terminfo/x/xterm-256color ]; then
-        export TERM='xterm-256color'
+    export TERM='xterm-256color'
+elif [ -e /usr/share/terminfo/x/xterm+256color ]; then
+    export TERM='xterm-256color'
 else
-        export TERM='xterm-color'
+    export TERM='xterm-color'
 fi
+
+#alias ssh_key="echo 'Enter user@domain to upload keys. ex. my_user@some-machine.com'; read ssh_acc && export ssh_acc=`read ssh_acc`; echo ssh-copy-id $ssh_acc; echo ssh-keygen -t rsa ;"
+
+alias ssh_tunnel=function_ssh_tunnel
+function_ssh_tunnel() {
+    echo "Please enter credentials ie: user@domain.com"
+    read credentials
+    echo "Please enter the proxy port ie. 9999"
+    read port
+    local cmd="ssh $credentials -ND $port -f"
+    echo "$cmd"
+    `$cmd`
+    echo "Please enter the "
+}
