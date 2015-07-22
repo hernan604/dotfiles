@@ -38,6 +38,8 @@ if [ -e "sudo rm /etc/fonts/conf.d/70-no-bitmaps.conf" ]
     sudo rm /etc/fonts/conf.d/70-no-bitmaps.conf
 fi
 
+source install_vundle.sh
+
 echo "
 X11 SECURITY:
 
@@ -51,4 +53,8 @@ CRONTAB:
 
     Keel $HOME/.external_ip updated 
     */5 * * * * $HOME/dotfiles/ip_update.sh
+
+XTERM 256colors:
+
+    sudo aptitude install ncurses-term
 "
