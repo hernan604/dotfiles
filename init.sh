@@ -57,4 +57,10 @@ CRONTAB:
 XTERM 256colors:
 
     sudo aptitude install ncurses-term
+
+OTHER SOFTWARES TO INSTALL:
+
+    perltidy 
+    cpanm JavaScript::Beautifier JSON::XS
+
 "
