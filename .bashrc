@@ -29,7 +29,11 @@ export PATH=$HOME/.luarocks/bin:$PATH
 
 
 #irssi
-alias irssi=$HOME/irssi/bin/irssi $@
+alias irssi=start_irssi
+start_irssi() {
+    TERM="screen-256color"
+    $HOME/irssi/bin/irssi $@
+}
 
 #NVM
 source ~/.nvm/nvm.sh
