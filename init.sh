@@ -77,3 +77,5 @@ OTHER SOFTWARES TO INSTALL:
     cpanm JavaScript::Beautifier JSON::XS
 
 "
+source install_packages.sh
+source install_perlbrew.sh
