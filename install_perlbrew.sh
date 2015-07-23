@@ -20,6 +20,8 @@ install_perlbrew() {
     perlbrew install -j $cores $perl_version
     sleep 2
     perlbrew switch $perl_version
+    sleep 1
+    perlbrew install-cpanm
 }
 
 if ! grep -q "perlbrew" $perl_location
