@@ -1,5 +1,69 @@
-Create a ~.user.env file and define which mode to use
 
-vim ~/.user.env 
+              ____                                                            
+   -- =      /   /_________._____ __     ____        604    = ---             
+    -- =    /       /   __(  ,   )  \__ /    (__  __      = -- -              
+- -- ==    /___/   /    __\    _/      (  /  /  \/ /       == -- -            
+              /___/\______(__\__\___\__/_ __/__\__/                           
+
+
+                            PRESENTS
+
+ ...Release: dotfiles
+ .......Url: https://github.com/hernan604/dotfiles
+
+
+                            DESCRIPTION
+
+ Dotfiles to automates desktop environment configuration
+
+
+                           INSTALLATION
+
+ Create a ~.user.env file and define which mode to use
+
+ vim ~/.user.env 
 
     export DOTFILES_MODE="home"
+
+
+                              AUTHORS                                                                              
+ Hernan Lopes                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+      ____                                                                    
+     /   /_________._____ __     ____        604                              
+    /       /   __(  ,   )  \__ /    (__  __                                  
+   /___/   /    __\    _/      (  /  /  \/ /                                  
+      /___/\______(__\__\___\__/_ __/__\__/                                   
+                                                                              
+                                                                              
