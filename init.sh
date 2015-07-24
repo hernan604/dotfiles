@@ -2,12 +2,25 @@
 
 PWD=`pwd`
 ##FILES=$(git ls-files)
-for f in ".bashrc" ".dataprinter" ".mc" ".screenrc" ".vimrc" ".Xresources" ".i3status.conf" ".tmux.conf" ".perltidyrc"
+for f in ".bashrc" ".dataprinter" ".mc" ".screenrc" ".vimrc" ".Xresources" ".i3status.conf" ".tmux.conf" ".perltidyrc" ".i3"
     do
-        echo "=> Working on: $f"
-        if [ ! -e $HOME/$f ]
+        echo "Working on: $f"
+        source="$PWD/$f"
+        destiny="$HOME/$f"
+        if [ ! -e $destiny ]
             then
-            `ln -s $PWD/$f $HOME/$f`
+            `ln -s $source $destiny`
+        else
+            if [ -L $destiny ]
+            then
+                echo "[ok] $f is link"
+            elif [ -f $destiny ]
+            then
+                echo "[warn]$f is file"
+            elif [ -d $destiny ]
+            then
+                echo "[warn]$f is Directory"
+            fi
         fi
     done
 
@@ -22,10 +35,6 @@ then
         ln -s "$HOME/dotfiles/vim-themes" "$HOME/.vim/colors"
 fi
 
-# i3
-ln -s $HOME/dotfiles/.i3/i3status.sh $HOME/.i3/i3status.sh
-ln -s $HOME/dotfiles/.i3/config $HOME/.i3/config
-
 # Fonts
 ./install_gohufont.sh
 
@@ -39,24 +48,7 @@ if [ -e "/etc/fonts/conf.d/70-no-bitmaps.conf" ]
     sudo rm /etc/fonts/conf.d/70-no-bitmaps.conf
 fi
 
-echo "
-X11 SECURITY
-------------
-
-    Include the following in /etc/X11/xorg.conf
-
-    Section "ServerFlags"
-        Option "DontVTSwitch" "true"
-    EndSection
-
-ENABLE BITMAP FONTS
--------------------
-
-    rm /etc/fonts/conf.d/70-no-bitmaps.conf
-
-CRONTAB
--------
-
-    Keel $HOME/.external_ip updated 
-    */5 * * * * $HOME/dotfiles/ip_update.sh
-"
+source install_vundle.sh
+source install_packages.sh
+source install_perlbrew.sh
+source tips.sh

@@ -97,3 +97,8 @@ XTerm*cursorBlink: true
 !   XTerm*foreground     : _foreground
 !   XTerm*background     : _background
 !   XTerm*cursorColor    : _cursorColor
+
+! xterm shift+ctrl+v
+XTerm*VT100.*translations:      #override \
+    Shift Ctrl C: select-end(CLIPBOARD, CUT_BUFFER0) \n\
+    Shift Ctrl V: insert-selection(CLIPBOARD, CUT_BUFFER0)

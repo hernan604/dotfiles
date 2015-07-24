@@ -29,7 +29,11 @@ export PATH=$HOME/.luarocks/bin:$PATH
 
 
 #irssi
-alias irssi=$HOME/irssi/bin/irssi $@
+alias irssi=start_irssi
+start_irssi() {
+    TERM="screen-256color"
+    $HOME/irssi/bin/irssi $@
+}
 
 #NVM
 source ~/.nvm/nvm.sh
@@ -85,7 +89,7 @@ export PATH=$PATH:$ANDROID_NDK/toolchains/$TARGET_ARCH-4.8/prebuilt/linux-x86_64
 
 if [ -e /usr/share/terminfo/x/xterm-256color ]; then
     export TERM='xterm-256color'
-elif [ -e /usr/share/terminfo/x/xterm+256color ]; then
+elif [ -e /usr/share/terminfo/x/xterm+256color ] ; then
     export TERM='xterm-256color'
 else
     export TERM='xterm-color'
