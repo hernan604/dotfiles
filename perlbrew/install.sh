@@ -26,7 +26,7 @@ install_perlbrew() {
 
 if ! grep -q "perlbrew" $perl_location
 then
-    echo "perlbrew not running"
+    echo "perlbrew not running ? installing..."
     install_perlbrew
 fi
 
