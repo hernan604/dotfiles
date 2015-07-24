@@ -91,7 +91,13 @@ else
     export TERM='xterm-color'
 fi
 
-#alias ssh_key="echo 'Enter user@domain to upload keys. ex. my_user@some-machine.com'; read ssh_acc && export ssh_acc=`read ssh_acc`; echo ssh-copy-id $ssh_acc; echo ssh-keygen -t rsa ;"
+alias ssh_key=function_ssh_key_generate
+function_ssh_key_generate() {
+    echo 'Enter user@domain to upload keys. ex. my_user@some-machine.com'
+    read ssh_acc 
+    ssh-keygen -t rsa
+    ssh-copy-id $ssh_acc
+}
 
 alias ssh_tunnel=function_ssh_tunnel
 function_ssh_tunnel() {
