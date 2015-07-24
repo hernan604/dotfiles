@@ -7,4 +7,4 @@ source fonts/install.sh
 source perlbrew/install.sh
 source vim/install.sh
 source X11/install.sh
-source tips.sh
+source extra/tips.sh
