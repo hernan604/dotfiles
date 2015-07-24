@@ -49,6 +49,6 @@ if [ -e "/etc/fonts/conf.d/70-no-bitmaps.conf" ]
 fi
 
 source install_vundle.sh
-source install_packages.sh
+source packages/install.sh
 source install_perlbrew.sh
 source tips.sh
