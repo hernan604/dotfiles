@@ -48,5 +48,5 @@ fi
 source install_vundle.sh
 source packages/install.sh
 source fonts/install.sh
-source install_perlbrew.sh
+source perlbrew/install.sh
 source tips.sh
