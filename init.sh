@@ -35,9 +35,6 @@ then
         ln -s "$HOME/dotfiles/vim-themes" "$HOME/.vim/colors"
 fi
 
-# Fonts
-./install_gohufont.sh
-
 echo "=> updating X-resources"
 xrdb -merge "$HOME/.Xresources"
 
@@ -50,5 +47,6 @@ fi
 
 source install_vundle.sh
 source packages/install.sh
+source fonts/install.sh
 source install_perlbrew.sh
 source tips.sh
