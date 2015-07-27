@@ -1,6 +1,6 @@
 # PERLBREW
 source ~/perl5/perlbrew/etc/bashrc
-export PERL_CPANM_OPT='--mirror http://mirror.nbtelecom.com.br/ --mirror http://linorg.usp.br/CPAN/ --mirror http://www.cpan.org'
+export PERL_CPANM_OPT='--mirror http://mirror.nbtelecom.com.br/CPAN/ --mirror http://linorg.usp.br/CPAN/ --mirror http://www.cpan.org'
 
 if [[ -e $HOME/.user.env ]]
     then

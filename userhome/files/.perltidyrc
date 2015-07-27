@@ -19,4 +19,4 @@
 -notr   # opening tokens on right of a line
 -nsfp   # no space after function
 -sot    # Stack opening tokens
--tso    # Tight secret operators
+#-tso    # Tight secret operators

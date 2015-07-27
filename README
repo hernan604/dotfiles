@@ -1,25 +1,34 @@
 
-              ____
-   -- =      /   /_________._____ __     ____        604    = ---
-    -- =    /       /   __(  ,   )  \__ /    (__  __      = -- -
-- -- ==    /___/   /    __\    _/      (  /  /  \/ /       == -- -
-              /___/\______(__\__\___\__/_ __/__\__/
+                   ____
+        -- =      /   /_________._____ __     ____        604    = ---     
+         -- =    /       /   __(  ,   )  \__ /    (__  __      = -- -
+     - -- ==    /___/   /    __\    _/      (  /  /  \/ /       == -- -
+                   /___/\______(__\__\___\__/_ __/__\__/
 
 
-                            PRESENTS
+                                  PRESENTS
 
- ...Release: dotfiles
+ ......Name: dotfiles
  .......Url: https://github.com/hernan604/dotfiles
 
 
-                            DESCRIPTION
+                                DESCRIPTION
 
  Dotfiles to automates desktop environment configuration
 
 
-                           INSTALLATION
+                                INSTALLATION
 
- Create a ~.user.env file and define which mode to use
+ cd $HOME
+ git clone https://github.com/hernan604/dotfiles.git
+ cd dotfiles
+ ./init.sh
+
+
+                                  OPTIONAL
+
+ Create a ~.user.env file and define which mode to use. This will adjust 
+ specific settings for the desired environment.
 
  vim ~/.user.env
 
@@ -27,5 +36,6 @@
     synclient TapButton3=2
 
 
-                              AUTHORS
- Hernan Lopes
+                                  AUTHORS
+
+ Hernan Lopes                                           hernanlopes@gmail.com
