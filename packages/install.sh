@@ -4,7 +4,7 @@ distro=`uname -v`
 echo $distro
 if echo $distro | grep -q "Ubuntu" 
     then
-    source ubuntu/install.sh
+    source $PWD/packages/ubuntu/install.sh
 else 
     echo "Install your packages manually."
 fi

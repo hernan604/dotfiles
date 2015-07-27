@@ -18,8 +18,10 @@ ENABLE BITMAP FONTS
 CRONTAB
 -------
 
-    Keel $HOME/.external_ip updated 
-    */5 * * * * $HOME/dotfiles/ip_update.sh
+    external ip is saved in: $HOME/.external_ip updated
+
+    Add this in crontab to activate:
+    */5 * * * * $HOME/dotfiles/extra/ip_update.sh
 
 XTERM 256colors:
 
