@@ -24,6 +24,7 @@
  vim ~/.user.env
 
     export DOTFILES_MODE="home"
+    synclient TapButton3=2
 
 
                               AUTHORS
