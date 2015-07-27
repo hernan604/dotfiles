@@ -53,8 +53,10 @@ if [ "$DOTFILES_MODE" != "" ] && [ "$DOTFILES_MODE" == "ET" ]
     `setxkbmap -layout us -variant intl`
     `xrandr --output LVDS-1-0 --mode 1600x900 --output VGA-1-0 --mode 1680x1050 --right-of LVDS-1-0`
     `xrandr --output LVDS1 --mode 1600x900 --output VGA1 --mode 1680x1050 --right-of LVDS1`
+elif [ "$DOTFILES_MODE" != "" ] && [ "$DOTFILES_MODE" == "EOKOE" ]
+    then
+    `xrandr --output LVDS1 --mode 1366x768 --output VGA1 --mode 1920x1080 --right-of LVDS1`
 else 
-        echo 'br'
     `setxkbmap br`
     `xrandr --output DVI-0 --mode 1280x1024 --left-of DVI-1 --output DVI-1 --mode 1600x900`
 fi

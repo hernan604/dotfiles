@@ -7,7 +7,8 @@ for f in ".bashrc" ".dataprinter" ".mc" ".screenrc" ".vimrc" ".Xresources" ".i3s
         destiny="$HOME/$f"
         if [ ! -e $destiny ]
             then
-            `ln -s $source $destiny`
+            cmd="ln -s $source $destiny"
+            `$cmd`
         else
             if [ -L $destiny ]
             then
