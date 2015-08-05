@@ -20,8 +20,15 @@ export GOPATH=~/go
 export PATH=$PATH:~/go/bin
 
 #JAVA
-export JAVA_HOME=$HOME/Downloads/jdk1.7.0_71
-export PATH=$JAVA_HOME/bin:$PATH
+if [[ -e $HOME/Downloads/jdk1.7.0_71 ]]
+    then
+        export JAVA_HOME=$HOME/Downloads/jdk1.7.0_71
+        export PATH=$JAVA_HOME/bin:$PATH
+elif [[ -e $HOME/Downloads/jdk1.7.0_80 ]]
+    then
+        export JAVA_HOME=$HOME/Downloads/jdk1.7.0_80
+        export PATH=$JAVA_HOME/bin:$PATH
+fi
 
 #LUA ROCKS
 export LUA_PATH="$HOME/.luarocks/share/lua/5.1/?.lua;$HOME/.luarocks/share/lua/5.1/?/init.lua;/usr/local/share/lua/5.1/?.lua;/usr/local/share/lua/5.1/?/init.lua;./?.lua;/usr/share/lua/5.1/?.lua;/usr/share/lua/5.1/?/init.lua;/usr/lib/lua/5.1/?.lua;/usr/lib/lua/5.1/?/init.lua"
