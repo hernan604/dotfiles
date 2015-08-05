@@ -1,4 +1,5 @@
 # PERLBREW
+export EDITOR=vim
 source ~/perl5/perlbrew/etc/bashrc
 export PERL_CPANM_OPT='--mirror http://mirror.nbtelecom.com.br/CPAN/ --mirror http://linorg.usp.br/CPAN/ --mirror http://www.cpan.org'
 
@@ -124,3 +125,19 @@ function_ssh_tunnel() {
     `$cmd`
     echo "Please enter the "
 }
+
+
+# SQUITCH
+deploydb_last_version () {
+   perl -e 'my $last = [ sort { $b <=> $a } grep {/^\d{1,4}-/} @ARGV]->[0]; $last =~ s/\.sql$//; print "$last"' `ls deploy_db/deploy/`
+}
+
+deploydb_next_version () {
+   perl -e 'my $name = shift @ARGV; my $last = [ sort { $b <=> $a } grep {/^\d{1,4}-/} @ARGV]->[0]; $last =~ s/\.sql$//; $last =~ s/^(\d+)-.+/sprintf(q{%04d}, $1+1)/e;  print "$last-$name"' $1 `ls deploy_db/deploy/`
+}
+
+new_deploy (){
+    sqitch add `deploydb_next_version $1` --requires `deploydb_last_version` -n "${*:2}"
+    $EDITOR deploy_db/deploy/`deploydb_last_version`.sql
+}
+
