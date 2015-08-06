@@ -46,6 +46,15 @@ start_irssi() {
 
 #NVM
 source ~/.nvm/nvm.sh
+_nvm_install() {
+    NVM_DIR="$HOME/.nvm"
+    mkdir $NVM_DIR
+    cd $NVM_DIR
+    curl https://raw.githubusercontent.com/creationix/nvm/v0.25.0/install.sh | bash
+    nvm install stable
+    nvm alias default stable
+    source $HOME/.bashrc
+}
 
 #JS spidermonkey
 export PATH="$PATH:/usr/include/js-17.0"
