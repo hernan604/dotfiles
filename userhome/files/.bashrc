@@ -145,8 +145,15 @@ deploydb_next_version () {
    perl -e 'my $name = shift @ARGV; my $last = [ sort { $b <=> $a } grep {/^\d{1,4}-/} @ARGV]->[0]; $last =~ s/\.sql$//; $last =~ s/^(\d+)-.+/sprintf(q{%04d}, $1+1)/e;  print "$last-$name"' $1 `ls deploy_db/deploy/`
 }
 
-new_deploy (){
+new_deploy () {
     sqitch add `deploydb_next_version $1` --requires `deploydb_last_version` -n "${*:2}"
     $EDITOR deploy_db/deploy/`deploydb_last_version`.sql
 }
 
+
+# grephere
+grephere () {
+    CMD="grep -Hr --color $1 ."
+    echo "$CMD"
+    `$CMD`
+}
