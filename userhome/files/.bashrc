@@ -14,8 +14,9 @@ fi
 #[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 #RVM
-#\curl -L https://get.rvm.io | bash -s -- --autolibs=read-fail
-#rvm install ruby
+#   \curl -L https://get.rvm.io | bash -s -- --autolibs=read-fail
+#   rvm install ruby
+#   rvm alias create default ruby-2.2.3
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 #GO LANG
@@ -158,4 +159,8 @@ grephere () {
     CMD="grep -Hr --color $1 ."
     echo "$CMD"
     `$CMD`
+}
+
+cgrep() {
+    grep -Hr --color $@
 }
