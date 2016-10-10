@@ -32,4 +32,8 @@ OTHER SOFTWARES TO INSTALL:
     perltidy 
     cpanm JavaScript::Beautifier JSON::XS
 
+SYNAPTICS THREE FINGER PASTE
+
+    echo synclient TapButton3=2 >> $HOME/.bashrc
+
 "
