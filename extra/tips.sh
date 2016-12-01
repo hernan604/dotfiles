@@ -32,4 +32,20 @@ OTHER SOFTWARES TO INSTALL:
     perltidy 
     cpanm JavaScript::Beautifier JSON::XS
 
-"
+RUN FIREFOX AS ANOTHER USER * * *
+    
+    1. create firefox_users group and asign a new user to it
+
+    sudo pw group add firefox_users
+    sudo pw user mod admin -g firefox_users
+
+    2. 
+
+    adduser newUSER (without password -- also add this user into yourUserRunningXGroup) 
+    chmod g-w,g+r,g+w /home/yourUserRunningX/.Xauthority ; ls -la /home/yourUserRunningX/ | grep Xauthority
+    chown newUSER:firefox_users /home/yourUserRunningX/.Xauthority
+
+    then, run firefox as this new user
+
+    sudo -u admin -H firefox
+

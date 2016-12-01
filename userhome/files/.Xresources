@@ -1,3 +1,17 @@
+Xft.dpi: 80
+Xft.autohint: 0
+Xft.lcdfilter:  lcddefault
+Xft.hintstyle:  hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+
+! cursor theme must be existing dir in ~/.icons or /usr/local/share/icons
+Xcursor.theme: Oxygen_Yellow
+
+Xcursor.size: 64
+
+
 !   # TO ACTIVATE, EXECUTE: xrdb -merge ~/.Xresources
 !   Name: DejaVu Sans Mono Book
 !   xterm*faceSize: 14
@@ -6,11 +20,13 @@
 !   xterm*background: rgb:00/00/FF
 
 
-XTerm*faceName: Gohufont
+!XTerm*faceName: Gohufont
+XTerm*faceName: Monaco
 !XTerm*faceName: Monaco
 !XTerm*faceName: Inconsolata
 !XTerm*faceName: Profont
-xterm*faceSize: 9
+!xterm*faceSize: 9
+xterm*faceSize: 14
 ! xterm*vt100*geometry: 80x60
 xterm*loginShell: true
 XTerm*charClass: 33:48,37:48,43:48,45-47:48,64:48,126:48,95:48
@@ -102,3 +118,49 @@ XTerm*cursorBlink: true
 XTerm*VT100.*translations:      #override \
     Shift Ctrl C: select-end(CLIPBOARD, CUT_BUFFER0) \n\
     Shift Ctrl V: insert-selection(CLIPBOARD, CUT_BUFFER0)
+
+
+
+
+
+
+Rxvt*termName: screen-256color
+! Rxvt*geometry: 240x84
+Rxvt*loginShell: true
+Rxvt*scrollColor: #777777
+Rxvt*scrollstyle: plain
+Rxvt*scrollTtyKeypress: true
+Rxvt*scrollTtyOutput: false
+Rxvt*scrollWithBuffer: false
+Rxvt*secondaryScreen: true
+Rxvt*secondaryScroll: true
+Rxvt*skipScroll: true
+Rxvt*scrollBar: false
+Rxvt*scrollBar_right: false
+Rxvt*scrollBar_floating: false
+Rxvt*fading: 30
+Rxvt*utmpInhibit: false
+Rxvt*urgentOnBell: false
+Rxvt*visualBell: true
+Rxvt*mapAlert: true
+Rxvt*mouseWheelScrollPage: false
+! Rxvt*background: Black
+! Rxvt.background: rgba:1111/1111/1111/dddd
+Rxvt.background: #000000
+Rxvt*foreground: White
+Rxvt*colorUL: yellow
+Rxvt*underlineColor: yellow
+! Rxvt*font: -xos4-terminus-medium-*-*-*-14-*-*-*-*-*-iso8859-15,xft:terminus:pixelsize:12
+! Rxvt*boldFont: -xos4-terminus-bold-*-*-*-14-*-*-*-*-*-iso8859-15,xft:terminus:bold:pixelsize:12
+! Rxvt*italicFont: xft:Bitstream Vera Sans Mono:italic:autohint=true:pixelsize=12
+! Rxvt*boldItalicFont: xft:Bitstream Vera Sans Mono:bold:italic:autohint=true:pixelsize=12
+Rxvt*saveLines: 0
+Rxvt*buffered: true
+Rxvt*hold: false
+Rxvt*internalBorder:
+! Rxvt*print-pipe: cat > $HOME/$(echo urxvt.dump.$(date +'%Y%M%d%H%m%S'))
+Rxvt*perl-ext-common:
+Rxvt*perl-ext:
+
+
+

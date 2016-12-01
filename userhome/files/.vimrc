@@ -56,7 +56,8 @@ filetype plugin indent on    " required
 " Wakatime
 :Bundle 'wakatime/vim-wakatime'
 
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 
 

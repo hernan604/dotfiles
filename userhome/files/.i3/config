@@ -8,14 +8,15 @@
 # i3 config file (v4)
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
-
+#force-xinerama yes
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:Gohufont 9
+# font pango:Gohufont 9
+font pango:"Aurulent Sans Mono" 5
 # font pango:Gohufont 11
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -28,8 +29,23 @@ font pango:Gohufont 9
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec xterm -bg 'rgb:22/22/22' -fg 'rgb:FB/DF/B5'
-#bindsym $mod+Return exec xterm -fa 'Gohufont' -fs 9 -bg 'rgb:19/19/19' -fg 'rgb:FB/DF/B5'
+#bindsym $mod+Return exec xterm -bg 'rgb:1b/3a/4f' -fg 'rgb:FF/FF/FF'
+#bindsym $mod+Return exec xterm -bg 'rgb:00/00/00' -fg 'rgb:FF/FF/FF'
+#bindsym $mod+Return exec xterm -fa 'Gohufont' -fs 11 -bg 'rgb:2A/2A/2A' -fg 'rgb:FB/DF/B5'
+#bindsym $mod+Return exec xterm -fa 'monofur' -fs 13 -bg 'rgb:2A/2A/2A' -fg 'rgb:FB/DF/B5'
+#   bindsym $mod+m exec LANG=en_US.UTF-8 xterm -fa 'gohufont' -fs 11 -bg 'rgb:1c/1c/1c' -fg 'rgb:FB/DF/B5'
+#   bindsym $mod+n exec LANG=en_US.UTF-8 xterm -fa 'gohufont' -fs 11 -bg 'rgb:2F/42/4D' -fg 'rgb:FB/DF/B5'
+#   bindsym $mod+b exec LANG=en_US.UTF-8 xterm -fa 'gohufont' -fs 11 -bg 'rgb:48/00/B4' -fg 'rgb:FB/DF/B5'
+#   bindsym $mod+c exec LANG=en_US.UTF-8 xterm -fa 'gohufont' -fs 11 -bg 'rgb:26/8B/D2' -fg 'rgb:FB/DF/B5'
+#   bindsym $mod+x exec LANG=en_US.UTF-8 xterm -fa 'gohufont' -fs 11 -bg 'rgb:13/42/3C' -fg 'rgb:FB/DF/B5'
+#   bindsym $mod+z exec LANG=en_US.UTF-8 xterm -fa 'gohufont' -fs 11 -bg 'rgb:42/13/32' -fg 'rgb:FB/DF/B5'
+
+bindsym $mod+m exec LANG=en_US.UTF-8 xterm -fa 'Aurulent Sans Mono' -fs 11 -bg 'rgb:1c/1c/1c' -fg 'rgb:00/e7/33'
+bindsym $mod+n exec LANG=en_US.UTF-8 xterm -fa 'Aurulent Sans Mono' -fs 11 -bg 'rgb:00/00/00' -fg 'rgb:00/e7/33'
+bindsym $mod+b exec LANG=en_US.UTF-8 xterm -fa 'Aurulent Sans Mono' -fs 11 -bg 'rgb:48/00/B4' -fg 'rgb:00/e7/33'
+bindsym $mod+c exec LANG=en_US.UTF-8 xterm -fa 'Aurulent Sans Mono' -fs 11 -bg 'rgb:26/8B/D2' -fg 'rgb:00/e7/33'
+bindsym $mod+x exec LANG=en_US.UTF-8 xterm -fa 'Aurulent Sans Mono' -fs 11 -bg 'rgb:13/42/3C' -fg 'rgb:00/e7/33'
+bindsym $mod+z exec LANG=en_US.UTF-8 xterm -fa 'Aurulent Sans Mono' -fs 11 -bg 'rgb:42/13/32' -fg 'rgb:00/e7/33'
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -99,52 +115,52 @@ bindsym $mod+a focus parent
 #bindsym $mod+1 workspace $tag1
 
 # workspace#1
-set $w1 "☢ Terminals"
+set $w1 "☢ 1-Terminals"
 bindsym $mod+1 workspace $w1
 bindsym $mod+Shift+1 move container to workspace $w1
 
 # workspace#2
-set $w2 "☣ Browsers"
+set $w2 "☣ 2-Browsers"
 bindsym $mod+2 workspace $w2
 bindsym $mod+Shift+2 move container to workspace $w2
 
 # workspace#3
-set $w3 "⚂ Office"
+set $w3 "⚂ 3-Office"
 bindsym $mod+3 workspace $w3
 bindsym $mod+Shift+3 move container to workspace $w3
 
 # workspace#4
-set $w4 "⚃ Images"
+set $w4 "⚃ 4-Images"
 bindsym $mod+4 workspace $w4
 bindsym $mod+Shift+4 move container to workspace $w4
 
 # workspace#5
-set $w5 "☮ Media"
+set $w5 "☮ 5-Media"
 bindsym $mod+5 workspace $w5
 bindsym $mod+Shift+5 move container to workspace $w5
 
 # workspace#6
-set $w6 "☯ Virtual Machines"
+set $w6 "☯ 6-Virtual Machines"
 bindsym $mod+6 workspace $w6
 bindsym $mod+Shift+6 move container to workspace $w6
 
 # workspace#7
-set $w7 "♐ Seven"
+set $w7 "♐ 7-Seven"
 bindsym $mod+7 workspace $w7
 bindsym $mod+Shift+7 move container to workspace $w7
 
 # workspace#8
-set $w8 " ☼Eight"
+set $w8 " ☼8-Eight"
 bindsym $mod+8 workspace $w8
 bindsym $mod+Shift+8 move container to workspace $w8
 
 # workspace#9
-set $w9 "☸ Nine"
+set $w9 "☸ 9-Nine"
 bindsym $mod+9 workspace $w9
 bindsym $mod+Shift+9 move container to workspace $w9
 
 # workspace#10
-set $w10 "☡ Ten"
+set $w10 "☡ 0-Ten"
 bindsym $mod+0 workspace $w10
 bindsym $mod+Shift+0 move container to workspace $w10
 
@@ -186,23 +202,29 @@ bindsym $mod+r mode "resize"
 # bar {
 #         status_command i3status
 # }
-client.focused              #3276E8 #3276E8 #ffffff
-client.unfocused            #5f676a #5f676a #ffffff
-client.focused_inactive     #222222 #222222 #888888
-client.urgent               #900000 #900000 #ffffff
+#   client.focused              #3276E8 #3276E8 #000000
+#   client.unfocused            #5f676a #5f676a #ffffff
+#   client.focused_inactive     #222222 #222222 #888888
+#   client.urgent               #900000 #900000 #ffffff
+
+#                                   Border  FONT-color                                    
+client.focused              #00FF2B #00FF2B #000000
+client.unfocused            #000000 #000000 #36BA01
+client.focused_inactive     #004d11 #004d11 #000000
+client.urgent               #222222 #222222 #ff0000
 bar {
         position top
         tray_output primary
 
         colors {
                 background #000000
-                separator  #ff0000
-                statusline #ffff00
+                separator  #36BA01
+                statusline #36BA01
 
-                focused_workspace  #3276E8 #3276E8 #ffffff
-                active_workspace   #5f676a #5f676a #ffffff
-                inactive_workspace #222222 #222222 #888888
-                urgent_workspace   #900000 #900000 #ffffff
+                focused_workspace  #00FF2B #00FF2B #000000
+                active_workspace   #36BA01 #36BA01 #444444
+                inactive_workspace #000000 #000000 #36BA01
+                urgent_workspace   #222222 #222222 #ff0000
         }
 #       status_command i3status 
         status_command ~/.i3/i3status.sh
@@ -214,3 +236,13 @@ bar {
 #exec --no-startup-id i3-msg 'exec xset r rate 250 50'
 #exec --no-startup-id i3-msg 'exec source ~/.bashrc && setxkbmap us'
 
+
+bindsym $mod+Shift+s sticky toggle
+
+#exec --no-startup-id ~/.i3/focustran.sh
+exec --no-startup-id "~/.i3/random_bg.sh"
+exec --no-startup-id "~/.i3/focustran.sh"
+exec /usr/local/bin/compton --config ~/.i3/.compton-i3.conf
+# exec /usr/local/bin/compiz
+#
+#exec /usr/local/bin/perl ~/.i3/focustran.pl 0.75 0.95 0.2
