@@ -15,6 +15,9 @@ fi
 #[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 #RVM
+#   \curl -L https://get.rvm.io | bash -s -- --autolibs=read-fail
+#   rvm install ruby
+#   rvm alias create default ruby-2.2.3
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 #GO LANG
@@ -22,8 +25,15 @@ export GOPATH=~/go
 export PATH=$PATH:~/go/bin
 
 #JAVA
-export JAVA_HOME=$HOME/Downloads/jdk1.7.0_71
-export PATH=$JAVA_HOME/bin:$PATH
+if [[ -e $HOME/Downloads/jdk1.7.0_71 ]]
+    then
+        export JAVA_HOME=$HOME/Downloads/jdk1.7.0_71
+        export PATH=$JAVA_HOME/bin:$PATH
+elif [[ -e $HOME/Downloads/jdk1.7.0_80 ]]
+    then
+        export JAVA_HOME=$HOME/Downloads/jdk1.7.0_80
+        export PATH=$JAVA_HOME/bin:$PATH
+fi
 
 #LUA ROCKS
 export LUA_PATH="$HOME/.luarocks/share/lua/5.1/?.lua;$HOME/.luarocks/share/lua/5.1/?/init.lua;/usr/local/share/lua/5.1/?.lua;/usr/local/share/lua/5.1/?/init.lua;./?.lua;/usr/share/lua/5.1/?.lua;/usr/share/lua/5.1/?/init.lua;/usr/lib/lua/5.1/?.lua;/usr/lib/lua/5.1/?/init.lua"
@@ -42,6 +52,15 @@ start_irssi() {
 
 #NVM
 source ~/.nvm/nvm.sh
+_nvm_install() {
+    NVM_DIR="$HOME/.nvm"
+    mkdir $NVM_DIR
+    cd $NVM_DIR
+    curl https://raw.githubusercontent.com/creationix/nvm/v0.25.0/install.sh | bash
+    nvm install stable
+    nvm alias default stable
+    source $HOME/.bashrc
+}
 
 #JS spidermonkey
 export PATH="$PATH:/usr/include/js-17.0"
@@ -146,7 +165,7 @@ deploydb_next_version () {
    perl -e 'my $name = shift @ARGV; my $last = [ sort { $b <=> $a } grep {/^\d{1,4}-/} @ARGV]->[0]; $last =~ s/\.sql$//; $last =~ s/^(\d+)-.+/sprintf(q{%04d}, $1+1)/e;  print "$last-$name"' $1 `ls deploy_db/deploy/`
 }
 
-new_deploy (){
+new_deploy () {
     sqitch add `deploydb_next_version $1` --requires `deploydb_last_version` -n "${*:2}"
     $EDITOR deploy_db/deploy/`deploydb_last_version`.sql
 }
@@ -234,3 +253,13 @@ export XAUTHORITY="/home/public/${USER}_Xauthority"
 
 # xterm transparency with transset
 [ -n "$XTERM_VERSION" ] && transset --id "$WINDOWID" .9 >/dev/null
+# grephere
+grephere () {
+    CMD="grep -Hr --color $1 ."
+    echo "$CMD"
+    `$CMD`
+}
+
+cgrep() {
+    grep -Hr --color $@
+}

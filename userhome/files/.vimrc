@@ -238,4 +238,4 @@ let g:airline_theme = 'papercolor'
 set laststatus=2
 
 :set background=dark
-:colorscheme kalahari
+:colorscheme kalahari_dark

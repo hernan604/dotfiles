@@ -49,3 +49,8 @@ RUN FIREFOX AS ANOTHER USER * * *
 
     sudo -u admin -H firefox
 
+SYNAPTICS THREE FINGER PASTE
+
+    echo synclient TapButton3=2 >> $HOME/.bashrc
+
+"
