@@ -91,6 +91,7 @@ if [ $HOSTNAME == "euro" ] ; then
     #$(xrandr --output $second_screen --mode 3840x2160 --rotate left --output $main_screen --mode 3840x2160 --right-of $second_screen)
     $(xrandr --output $second_screen --mode 3840x2160 --rotate normal --output $main_screen --mode 3840x2160 --right-of $second_screen)
     $(setxkbmap -layout br)
+    #$(setxkbmap -layout us -variant intl)
 fi
 
 #`setxkbmap -layout us -variant intl`

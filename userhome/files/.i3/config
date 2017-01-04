@@ -40,7 +40,8 @@ floating_modifier $mod
 #   bindsym $mod+x exec LANG=en_US.UTF-8 xterm -fa 'gohufont' -fs 11 -bg 'rgb:13/42/3C' -fg 'rgb:FB/DF/B5'
 #   bindsym $mod+z exec LANG=en_US.UTF-8 xterm -fa 'gohufont' -fs 11 -bg 'rgb:42/13/32' -fg 'rgb:FB/DF/B5'
 
-bindsym $mod+m exec LANG=en_US.UTF-8 xterm -fa 'Aurulent Sans Mono' -fs 11 -bg 'rgb:1c/1c/1c' -fg 'rgb:00/e7/33'
+bindsym $mod+m exec LANG=en_US.UTF-8 xterm -fa 'Gohufont-14' -fs 11 -bg 'rgb:1c/1c/1c' -fg 'rgb:00/e7/33'
+#bindsym $mod+m exec LANG=en_US.UTF-8 uxterm -fa 'Aurulent Sans Mono' -fs 11 -bg 'rgb:1c/1c/1c' -fg 'rgb:00/e7/33'
 bindsym $mod+n exec LANG=en_US.UTF-8 xterm -fa 'Aurulent Sans Mono' -fs 11 -bg 'rgb:00/00/00' -fg 'rgb:00/e7/33'
 bindsym $mod+b exec LANG=en_US.UTF-8 xterm -fa 'Aurulent Sans Mono' -fs 11 -bg 'rgb:48/00/B4' -fg 'rgb:00/e7/33'
 bindsym $mod+c exec LANG=en_US.UTF-8 xterm -fa 'Aurulent Sans Mono' -fs 11 -bg 'rgb:26/8B/D2' -fg 'rgb:00/e7/33'
