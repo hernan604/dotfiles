@@ -1,44 +1,26 @@
-
-                                                          ____
-                    ___        _______      ____         /   /                 
- 1 0 1 1 0 1 1 1 0 /  /___ ____\_     \__  /   /__      / 604 0 1 0 1 1 0 1 1 1
- 1 1 1 0 1 0 0 1 1/      /   ___/ /   /  \/   /   \__  /   /1 1 1 1 1 0 1 0 0 1
- 0 1 0 1 1 0 0 0 /__/   /    __/    _/       / /  /  \/   / 0 1 0 1 0 1 1 0 0 0
- 1 0 1 0 1 1 1 0 1 /    \      \__\  \___\  /_   /__\____/0 1 0 1 0 1 0 1 1 1 0
- 0 1 0 1 0 0 1 1 0/     /\      \  \  \   \_github.com/hernan604  1 0 1 0 0 1 1
-                 /_____/  \______\  \__\     /__/       
+My dotfiles.
 
 
-                                  PRESENTS
+       ____            +            +-             +        +
+     _/    \____  _______   +-                        -          +
+    /      /   /_/       \_  ____    +-                ____    +-
+   /          /           /_/    \_       +           /    \_       +
+   \    /    /   ________/         \_______       ___/  _    \_______
+   /___/      \    ___/     /     _/__     \  ___/_    /     /__     \  _____
+   \__/       /\       \____\         \     \/     \__/         \     \/     \
+     /__     /\ \__    /____/\         \_/\        /__/\         \_/\        /
+     \_/\___/  \/_/\__/     \ \________//\ \______/   \ \________//\ \______/
+       \/__/   .  \/_/   +   \/_______/   \/_____/     \/_______/   \/_____/
+       .  .    .    .        .       .    .     .      .       .    .     .
+       .  .    .    .        .       .    .     .      .       .    .     .
+       .  .    .    .        .       .    .     .      .            .     .
+       .  .    .    .        .       .    .                         .
+       .  .         .                     .                    .
+       .                                                                  .
+               .                                .      .            .     .
+          .         .        .       .                         .
+       .            .                     .
+                                     .          .                   .
+                                          .                               .
 
- ......Name: dotfiles
- .......Url: https://github.com/hernan604/dotfiles
-
-
-                                DESCRIPTION
-
- Dotfiles to automates desktop environment configuration
-
-
-                                INSTALLATION
-
- cd $HOME
- git clone https://github.com/hernan604/dotfiles.git
- cd dotfiles
- ./init.sh
-
-
-                                  OPTIONAL
-
- Create a ~.user.env file and define which mode to use. This will adjust 
- specific settings for the desired environment.
-
- vim ~/.user.env
-
-    export DOTFILES_MODE="home"
-    synclient TapButton3=2
-
-
-                                  AUTHORS
-
- Hernan Lopes                                           hernanlopes@gmail.com
+ 
