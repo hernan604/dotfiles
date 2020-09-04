@@ -1,5 +1,6 @@
 set nomodeline
 
+" set wfh --  window fixed height
 
 
 " ####### https://github.com/gmarik/Vundle.vim ########### BEGIN
@@ -19,6 +20,7 @@ Plugin 'gmarik/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
+Plugin 'ctrlpvim/ctrlp.vim'
 " plugin from http://vim-scripts.org/vim/scripts.html
 Plugin 'L9'
 " Git plugin not hosted on GitHub
@@ -35,6 +37,29 @@ Plugin 'https://github.com/justinmk/vim-syntax-extra.git'
 
 Plugin 'pangloss/vim-javascript'
 
+Plugin 'airblade/vim-gitgutter'
+Plugin 'sjl/gundo.vim'
+Plugin 'jlanzarotta/bufexplorer'
+Plugin 'xolox/vim-colorscheme-switcher'
+Plugin 'xolox/vim-misc'
+Plugin 'mattn/emmet-vim'
+
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+let g:ctrlp_max_files = 0
+let g:ctrlp_working_path_mode = 'c'
+let g:ctrlp_cmd = 'CtrlP :pwd'
+
+":Bundle 'wakatime/vim-wakatime'
+ 
+:hi CustomPink ctermbg=205 guibg=hotpink guifg=black ctermfg=black
+:hi CustomRed ctermbg=124 guibg=hotpink guifg=black ctermfg=black
+:hi CustomYellow ctermbg=50 guibg=hotpink guifg=black ctermfg=black
+:call matchadd('CustomPink', '\<undefined\>')
+:call matchadd('CustomPink', 'TODO')
+:call matchadd('CustomPink', 'FROM')
+:call matchadd('CustomPink', 'SELECT')
+:call matchadd('CustomRed', '\t')
+:call matchadd('CustomYellow', '\s\+$')
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -54,23 +79,9 @@ filetype plugin indent on    " required
 
 
 " Wakatime
-:Bundle 'wakatime/vim-wakatime'
 
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 :syntax on
 :set softtabstop=4
@@ -83,9 +94,10 @@ Plugin 'vim-airline/vim-airline-themes'
 
 ":set foldmethod=syntax
 "SOMETHING IS BUGGED WITH :set number ... when opening a fold, gives seg fault
-":set number
+:set number
 
 :set cursorline
+:set cursorcolumn
 ":set backspace=eol,indent,start
 ":autocmd BufWritePre * :%s/\s\+$//e
 ":autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe 'normal g"\'' | endif
@@ -239,3 +251,8 @@ set laststatus=2
 
 :set background=dark
 :colorscheme kalahari_dark
+
+:set mouse-=a
+
+:set encoding=utf-8
+:set fileencoding=utf-8
