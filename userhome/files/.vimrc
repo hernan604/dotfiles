@@ -80,8 +80,8 @@ filetype plugin indent on    " required
 
 " Wakatime
 
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+" Plugin 'vim-airline/vim-airline'
+" Plugin 'vim-airline/vim-airline-themes'
 
 :syntax on
 :set softtabstop=4
@@ -240,17 +240,16 @@ command! -nargs=+ Caniuse !caniuse <args>
 "Example of command using: :Lss -la /
 command! -nargs=+ Lss !ls <args>
 
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline_powerline_fonts = 1
-
-let g:airline_theme = 'papercolor' 
+" let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#left_sep = ' '
+" let g:airline#extensions#tabline#left_alt_sep = '|'
+" let g:airline_powerline_fonts = 1
+" let g:airline_theme = 'papercolor' 
 
 set laststatus=2
 
 :set background=dark
-:colorscheme kalahari_dark
+:colorscheme kalahari_dark_MOD
 
 :set mouse-=a
 
