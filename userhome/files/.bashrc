@@ -51,12 +51,18 @@ start_irssi() {
 }
 
 #NVM
-source ~/.nvm/nvm.sh
+NVM_PATH="~/.nvm/nvm.sh"
+NVM_DIR="~/.nvm"
+if [[ -e $NVM_PATH ]]
+    then
+        source $NVM_PATH
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+fi
+
 _nvm_install() {
-    NVM_DIR="$HOME/.nvm"
     mkdir $NVM_DIR
     cd $NVM_DIR
-    curl https://raw.githubusercontent.com/creationix/nvm/v0.25.0/install.sh | bash
+    curl https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
     nvm install stable
     nvm alias default stable
     source $HOME/.bashrc
@@ -102,22 +108,6 @@ fi
 if [[ -e $HOME/.Xresources ]]; then xrdb -merge $HOME/.Xresources ; fi
 
 alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
-
-
-dynamic_bash_prompt() {
-    DIR=`pwd`;
-    if [[ "$DIR" == *webdrive*  ]]; then
-#       export PS1="[\e[0;32m\u\e[m\e[0;33m@\e[0;31m\h\e[m \e[0;37m\W\e[m] [\e[1;31m webdrive\e[m ] $ " ;
-        export PS1='\u@\h \w [ *webdrive* ] $ '
-    elif [[ "$DIR" == */home/hernan* ]]; then
-        export PS1='\u@\h \w $ '
-#       export PS1="[\e[0;32m\u\e[m\e[0;33m@\e[0;31m\h\e[m \e[1;33m\W\e[m] $ " ;
-    else 
-        export PS1="[\w] $ ";
-    fi; 
-}
-#PROMPT_COMMAND="dynamic_bash_prompt"
-dynamic_bash_prompt
 
 # Android SDK + NDK: http://perltricks.com/article/97/2014/6/16/How-to-build-Perl-on-Android-4-4
 export PATH=$PATH:$HOME/android-sdk-linux/tools:$HOME/android-sdk-linux/platform
@@ -175,10 +165,6 @@ new_deploy () {
 # disable perl make dist MYMETA.yml inclusion in distribuition file
 export NO_META=1
 
-
-
-
-
 open_tunnel (){
     ip="$1"
     ssh -C2TNv -D 0.0.0.0:8080 pi@$ip
@@ -186,11 +172,6 @@ open_tunnel (){
 open_tunnel_chrome () {
     google-chrome-stable --proxy-server="socks5://localhost:8080" --host-resolver-rules="MAP * 0.0.0.0 , EXCLUDE localhost"
 }
-
-
-
-
-
 
 # saves every line in bash history (even with multiple terminals with screen/tmux)
 export HISTCONTROL=ignoredups:erasedups #erase duplicates 
@@ -212,28 +193,6 @@ create_ssh_key (){
     ssh-keygen -t rsa -b 4096 -C "$email"
 }
 
-set_xterm_colors (){
-    if [ `hostname` == "alienware" ] ; then
-        echo "XTERM - adjusting colors (.bashrc) to alienware profile"
-        echo -e '\e]11;rgb:00/00/00\a' #set xterm bg
-        echo -e '\e]10;rgb:ff/ff/ff\a' #set xterm fg 
-    elif [ `hostname` == "pc2" ] ; then
-        echo "XTERM - adjusting colors (.bashrc) to alienware profile"
-        echo -e '\e]11;rgb:00/00/00\a' #set xterm bg
-        echo -e '\e]10;rgb:ff/ff/ff\a' #set xterm fg 
-    fi
-}
-set_xterm_colors
-
-set_xterm_title (){
-    if [ -z "$1" ] ; then
-        echo -en "\033]0;default title\a"
-    else
-        echo -en "\033]0;$1\a"
-    fi
-}
-set_xterm_title
-
 # set vim as default editor for git
 export VISUAL=vim
 export EDITOR="$VISUAL"
@@ -253,7 +212,7 @@ alias transmission="sudo -u admin -H transmission-gtk"
 export XAUTHORITY="/home/public/${USER}_Xauthority"
 
 # xterm transparency with transset
-[ -n "$XTERM_VERSION" ] && transset --id "$WINDOWID" .9 >/dev/null
+#[ -n "$XTERM_VERSION" ] && transset --id "$WINDOWID" .9 >/dev/null
 # grephere
 grephere () {
     CMD="grep -Hr --color $1 ."
@@ -264,3 +223,6 @@ grephere () {
 cgrep() {
     grep -Hr --color $@
 }
+
+setxkbmap -layout br 
+#setxkbmap -layout br -variant thinkpad
