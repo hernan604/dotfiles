@@ -214,8 +214,8 @@ bindsym $mod+r mode "resize"
 #   client.urgent               #900000 #900000 #ffffff
 
 #                                   Border  FONT-color                                    
-client.focused              #00FF2B #00FF2B #000000
-client.unfocused            #000000 #000000 #36BA01
+client.focused              #dd00ee #dd00ee #000000
+client.unfocused            #000000 #000000 #77bb00
 client.focused_inactive     #004d11 #004d11 #000000
 client.urgent               #222222 #222222 #ff0000
 bar {
@@ -227,13 +227,13 @@ bar {
                 separator  #36BA01
                 statusline #36BA01
 
-                focused_workspace  #00FF2B #00FF2B #000000
+                focused_workspace  #dd00ee #dd00ee #000000
                 active_workspace   #36BA01 #36BA01 #444444
                 inactive_workspace #000000 #000000 #36BA01
                 urgent_workspace   #222222 #222222 #ff0000
         }
 #       status_command i3status 
-        status_command ~/.i3/i3status.sh
+       #status_command ~/.i3/i3status.sh
 }
 
 # place correct monitor
