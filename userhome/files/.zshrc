@@ -10,6 +10,7 @@ antigen apply
 
 #setxkbmap -layout br -variant thinkpad
 setxkbmap -layout us -variant intl
+#setxkbmap br
 xset r rate 250 50
 
 source ~/.bashrc_custom
@@ -123,3 +124,5 @@ alias gpob="branch=\$(git branch | grep \* | awk '{print \$2}'); git push origin
 
 
 
+
+perl -e 'my $colors = ["#dd00ee","#d0ed0e","#00bb77","#7700bb","#0077bb","#77bb00","#ed0ed0"]; my $min=0; my $max=scalar @{$colors}; my $sel = $min + int(rand($max - $min)); my $color = $colors->[$sel] ; `xsetroot -solid "$color" `;'
