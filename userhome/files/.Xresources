@@ -1,3 +1,4 @@
+!   # TO RELOAD, EXECUTE: xrdb -merge ~/.Xresources
 Xft.dpi: 80
 Xft.autohint: 0
 Xft.lcdfilter:  lcddefault
@@ -12,7 +13,6 @@ Xcursor.theme: Oxygen_Yellow
 Xcursor.size: 64
 
 
-!   # TO ACTIVATE, EXECUTE: xrdb -merge ~/.Xresources
 !   Name: DejaVu Sans Mono Book
 !   xterm*faceSize: 14
 
@@ -34,7 +34,7 @@ XTerm*charClass: 33:48,37:48,43:48,45-47:48,64:48,126:48,95:48
 xterm*eightBitInput: false
 XTerm*SaveLines: 30000
 
-XTerm*cursorColor: #3276E8
+XTerm*cursorColor: #dd00ee
 XTerm*cursorBlink: true
 
 !   !BLK Cursor
