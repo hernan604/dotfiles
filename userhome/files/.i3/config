@@ -214,22 +214,22 @@ bindsym $mod+r mode "resize"
 #   client.urgent               #900000 #900000 #ffffff
 
 #                                   Border  FONT-color                                    
-client.focused              #dd00ee #dd00ee #000000
-client.unfocused            #000000 #000000 #77bb00
-client.focused_inactive     #004d11 #004d11 #000000
+client.focused              #ff00af #ff00af #000000
+client.unfocused            #585858 #585858 #ffffff
+client.focused_inactive     #585858 #585858 #ffffff
 client.urgent               #222222 #222222 #ff0000
 bar {
         position top
         tray_output primary
 
         colors {
-                background #000000
+                background #585858
                 separator  #36BA01
                 statusline #36BA01
 
-                focused_workspace  #dd00ee #dd00ee #000000
-                active_workspace   #36BA01 #36BA01 #444444
-                inactive_workspace #000000 #000000 #36BA01
+                focused_workspace  #ff00af #ff00af #000000
+                active_workspace   #36BA01 #36BA01 #ffffff
+                inactive_workspace #585858 #585858 #ffffff
                 urgent_workspace   #222222 #222222 #ff0000
         }
 #       status_command i3status 
