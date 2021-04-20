@@ -24,14 +24,14 @@ let g:colors_name="kalahari_dark_MOD"
 
 " 256-color mode, adapted from 'desert256' <<<
 if has("gui_running") || &t_Co == 256
-  hi Normal       ctermfg=255  ctermbg=0
+  hi Normal       ctermfg=255  
   hi NonText      ctermfg=152  ctermbg=0  cterm=bold
 
   " highlight groups <<<
   hi Cursor       ctermfg=66   ctermbg=222
- "hi CursorColumn              ctermbg=242
-  hi CursorLine                ctermbg=236  cterm=none
-  hi ColorColumn               ctermbg=235  cterm=none
+  hi CursorColumn ctermfg=0    ctermbg=190
+  hi CursorLine   ctermfg=0    ctermbg=190  cterm=none
+  hi ColorColumn  ctermfg=0    ctermbg=190  cterm=none
  "hi DiffAdd                   ctermbg=4
  "hi DiffChange                ctermbg=5
  "hi DiffDelete   ctermfg=12   ctermbg=6
@@ -39,10 +39,12 @@ if has("gui_running") || &t_Co == 256
  "hi Directory    ctermfg=159
  "hi ErrorMsg     ctermfg=15   ctermbg=1
   hi FoldColumn   ctermfg=243  ctermbg=237
-  hi Folded       ctermfg=243  ctermbg=237
+  hi Folded       ctermfg=190  ctermbg=237
   hi IncSearch    ctermfg=62   ctermbg=222  cterm=reverse
-  hi Search       ctermfg=223  ctermbg=61
-  hi LineNr       ctermfg=244
+  hi Search       ctermfg=7    ctermbg=199
+  hi LineNr       ctermfg=190
+  hi CursorLineNr ctermfg=0  ctermbg=190
+" gui=bold guifg=0
  "hi MatchParen                ctermbg=6
   hi ModeMsg      ctermfg=178               cterm=bold
   hi MoreMsg      ctermfg=29
@@ -58,15 +60,15 @@ if has("gui_running") || &t_Co == 256
  "hi SpellCap                  ctermbg=12
  "hi SpellLocal                ctermbg=14
  "hi SpellRare                 ctermbg=13
-  hi StatusLine   ctermfg=3    ctermbg=16   cterm=reverse,bold
-  hi StatusLineNC ctermfg=3    ctermbg=240  cterm=none
+  hi StatusLine   ctermfg=199    ctermbg=255   cterm=reverse,bold
+  hi StatusLineNC ctermfg=255    ctermbg=240  cterm=none
   hi TabLine      ctermfg=250  ctermbg=237  cterm=underline
   hi TabLineFill               ctermbg=237  cterm=none
  "hi TabLineSel   ctermfg=167  ctermbg=238
  "hi TabLineSel                             cterm=bold
   hi Title        ctermfg=167               cterm=bold
-  hi VertSplit    ctermfg=238  ctermbg=240  cterm=none
-  hi Visual       ctermfg=254  ctermbg=68
+  hi VertSplit    ctermfg=0  ctermbg=190  cterm=none
+  hi Visual       ctermfg=0  ctermbg=190
   hi VisualNOS                              cterm=bold,underline
   hi WarningMsg   ctermfg=209
  "hi WildMenu     ctermfg=0    ctermbg=11
