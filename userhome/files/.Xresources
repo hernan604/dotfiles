@@ -39,7 +39,7 @@ XTerm*cursorBlink: true
 
 !BLK Cursor
 #define _color0        #1c1c1c
-#define _color8        #1c1c1c
+#define _color8        #6a6a6a
 !RED Tag
 #define _color1        #d0120e
 #define _color9        #d0120e
