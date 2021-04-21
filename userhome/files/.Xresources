@@ -39,7 +39,7 @@ XTerm*cursorBlink: true
 
 !BLK Cursor
 #define _color0        #1c1c1c
-#define _color8        #6a6a6a
+#define _color8        #cccccc
 !RED Tag
 #define _color1        #d0120e
 #define _color9        #d0120e
@@ -59,8 +59,8 @@ XTerm*cursorBlink: true
 #define _color6        #d0ed0e
 #define _color14       #d0ed0e
 !WHT Search
-#define _color7        #efefef
-#define _color15       #efefef
+#define _color7        #1c1c1c
+#define _color15       #cccccc
 !FMT Include, StatusLine, ErrorMsg
 #define _colorBD       #ffcfaf
 #define _colorUL       #ccdc90
