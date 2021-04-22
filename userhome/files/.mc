@@ -109,7 +109,7 @@ clipboard_store=
 clipboard_paste=
 
 [Colors]
-base_color=linux:normal=yellow,black:marked=yellow,black:input=,blue:menu=white,magenta:menusel=white:menuhot=white,:menuhotsel=white,black:dfocus=white,black:dhotnormal=white,black:dhotfocus=white,black:executable=,black:directory=white,black:link=white,black:device=white,black:special=white,black:core=,black:stalelink=red,black:editnormal=white,black:selected=white,magenta:dnormal=magenta,white:markselect=red,magenta:marked=magenta,
+base_color=linux:normal=yellow,black:input=,blue:menu=white,magenta:menusel=white:menuhot=white,:menuhotsel=white,black:dfocus=white,black:dhotnormal=white,black:dhotfocus=white,black:executable=,black:directory=white,black:link=white,black:device=white,black:special=white,black:core=,black:stalelink=red,black:editnormal=white,black:selected=white,magenta:dnormal=magenta,white:markselect=red,magenta:marked=magenta,
 
 xterm=
 color_terminals=

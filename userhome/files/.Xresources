@@ -38,6 +38,7 @@ XTerm*SaveLines: 30000
 XTerm*cursorBlink: true
 
 !BLK Cursor
+! background screen color
 #define _color0        #1c1c1c
 #define _color8        #cccccc
 !RED Tag
@@ -59,7 +60,8 @@ XTerm*cursorBlink: true
 #define _color6        #d0ed0e
 #define _color14       #d0ed0e
 !WHT Search
-#define _color7        #1c1c1c
+! in mc   its link color
+#define _color7        #cccccc
 #define _color15       #cccccc
 !FMT Include, StatusLine, ErrorMsg
 #define _colorBD       #ffcfaf
