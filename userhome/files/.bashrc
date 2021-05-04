@@ -228,5 +228,8 @@ cgrep() {
 
 if [[ -e /usr/local/bin/setxkbmap ]] ; then
     setxkbmap -layout br 
-if
+fi
 #setxkbmap -layout br -variant thinkpad
+if [[ -e $HOME/.bashrc_custom ]] ; then
+    source $HOME/.bashrc_custom
+fi
