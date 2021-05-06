@@ -103,9 +103,14 @@ fi
 #`setxkbmap -layout us -variant intl`
 #`setxkbmap -layout br`
 
-`xset r rate 250 50`
+if [[ -e /usr/local/bin/xset ]] ; then
+    #increase keyboard commands per second key pressed
+    xset r rate 250 50
+    # dont beep!!
+    xset b off
+fi
 
-if [[ -e $HOME/.Xresources ]]; then xrdb -merge $HOME/.Xresources ; fi
+if [[ -e $HOME/.Xresources ]] && [[ -e /usr/local/bin/xrdb ]] ; then xrdb -merge $HOME/.Xresources ; fi
 
 alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
 
@@ -199,9 +204,6 @@ export EDITOR="$VISUAL"
 
 [[ $PS1 && -f /usr/local/share/bash-completion/bash_completion.sh ]] && source /usr/local/share/bash-completion/bash_completion.sh
 
-# dont beep!!
-xset b off
-
 TERM="xterm-256color"
 
 alias firefox="sudo -u admin -H firefox"
@@ -224,5 +226,10 @@ cgrep() {
     grep -Hr --color $@
 }
 
-setxkbmap -layout br 
+if [[ -e /usr/local/bin/setxkbmap ]] ; then
+    setxkbmap -layout br 
+fi
 #setxkbmap -layout br -variant thinkpad
+if [[ -e $HOME/.bashrc_custom ]] ; then
+    source $HOME/.bashrc_custom
+fi

@@ -9,9 +9,13 @@ antigen bundle zsh-users/zsh-autosuggestions
 antigen apply
 
 #setxkbmap -layout br -variant thinkpad
+if [[ -e /usr/local/bin/setxkbmap ]] ; then
 setxkbmap -layout us -variant intl
+fi
 #setxkbmap br
-xset r rate 250 50
+if [[ -e /usr/local/bin/xset ]] ; then
+    xset r rate 250 50
+fi
 
 source ~/.bashrc_custom
 eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"
@@ -125,4 +129,6 @@ alias gpob="branch=\$(git branch | grep \* | awk '{print \$2}'); git push origin
 
 
 
-perl -e 'my $colors = ["#dd00ee","#d0ed0e","#00bb77","#7700bb","#0077bb","#77bb00","#ed0ed0"]; my $min=0; my $max=scalar @{$colors}; my $sel = $min + int(rand($max - $min)); my $color = $colors->[$sel] ; `xsetroot -solid "$color" `;'
+if [[ -e /usr/local/bin/xsetroot ]] ; then
+    perl -e 'my $colors = ["#dd00ee","#d0ed0e","#00bb77","#7700bb","#0077bb","#77bb00","#ed0ed0"]; my $min=0; my $max=scalar @{$colors}; my $sel = $min + int(rand($max - $min)); my $color = $colors->[$sel] ; `xsetroot -solid "$color" `;'
+fi
