@@ -212,6 +212,7 @@ alias thunderbird="sudo -u admin -H thunderbird"
 alias transmission="sudo -u admin -H transmission-gtk"
 
 export XAUTHORITY="/home/public/${USER}_Xauthority"
+echo $XAUTHORITY
 
 # xterm transparency with transset
 #[ -n "$XTERM_VERSION" ] && transset --id "$WINDOWID" .9 >/dev/null
