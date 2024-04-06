@@ -8,6 +8,8 @@ antigen bundle zsh-users/zsh-autosuggestions
 
 antigen apply
 
+ZSH_THEME="robbyrussell"
+
 if [[ -e /usr/local/bin/setxkbmap ]] ; then
     if [[ $(ifconfig) =~ 67:aa ]] ; then
         setxkbmap -layout br -variant thinkpad
@@ -15,17 +17,25 @@ if [[ -e /usr/local/bin/setxkbmap ]] ; then
     #setxkbmap -layout us -variant intl
     #setxkbmap br
 fi
+
 if [[ -e /usr/local/bin/xset ]] ; then
     xset r rate 250 50
+    xset s off -dpms
 fi
 
-source ~/.bashrc_custom
-eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"
+if [[ -e ~/.bashrc_custom ]] ; then
+  source ~/.bashrc_custom
+fi
+
 perl ~/dotfiles/userhome/files/banner.pl
 
+LOCALLIB="$HOME/perl5/lib/perl5"
+if [[ -d $LOCALLIB ]]; then
+    eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"
+fi
 
-ZSH_THEME="robbyrussell"
-
+NOW=$(date)
+echo $NOW
 
 create_ssh_key (){
     echo "Enter your email:"
@@ -33,7 +43,6 @@ create_ssh_key (){
     echo ssh-keygen -t rsa -b 4096 -C "$email"
     ssh-keygen -t rsa -b 4096 -C "$email"
 }
-
 
 open_tunnel (){
     ip="$1"
@@ -135,9 +144,9 @@ if [[ -e /usr/local/bin/xsetroot ]] ; then
     perl -e 'my $colors = ["#dd00ee","#d0ed0e","#00bb77","#7700bb","#0077bb","#77bb00","#ed0ed0"]; my $min=0; my $max=scalar @{$colors}; my $sel = $min + int(rand($max - $min)); my $color = $colors->[$sel] ; `xsetroot -solid "$color" `;'
 fi
 
-export XAUTHORITY="/home/public/${USER}_Xauthority"
+export XAUTHORITY="/tmp/${USER}_Xauthority"
 
 alias firefox="sudo -u admin -H firefox"
 alias chrome="sudo -u admin -H chrome"
-alias thunderbird="sudo -u admin -H thunderbird"
+#alias thunderbird="sudo -u admin -H thunderbird"
 alias transmission="sudo -u admin -H transmission-gtk"

@@ -26,6 +26,9 @@ XTerm*SaveLines: 30000
 
 XTerm*cursorColor: #dd00ee
 XTerm*cursorBlink: true
+XTerm*cursorOffTime: 100
+XTerm*cursorOnTime: 100
+
 
 !BLK Cursor
 ! background screen color

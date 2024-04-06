@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 ##FILES=$(git ls-files)
-for f in ".bashrc" ".dataprinter" ".mc" ".screenrc" ".vimrc" ".Xresources" ".i3status.conf" ".tmux.conf" ".perltidyrc" ".i3" ".login_conf"
+for f in ".xinitrc" ".zshrc" ".bashrc" ".dataprinter" ".mc" ".screenrc" ".vimrc" ".Xresources" ".i3status.conf" ".tmux.conf" ".perltidyrc" ".i3" ".login_conf"
     do
         echo "Working on: $f"
         source="$PWD/userhome/files/$f"

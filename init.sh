@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
-
-PWD=`pwd`
-source userhome/install.sh
-source packages/install.sh
-source fonts/install.sh
-source perlbrew/install.sh
-source vim/install.sh
-source X11/install.sh
-source extra/tips.sh
+PWD="$(realpath $(realpath $(dirname $0))/../)"
+if [[ $(uname) =~ 'FreeBSD' ]]; then
+  $PWD/freebsd/install.sh
+fi
+$PWD/userhome/install.sh
+$PWD/packages/install.sh
+$PWD/fonts/install.sh
+$PWD/perlbrew/install.sh
+$PWD/vim/install.sh
+$PWD/X11/install.sh
+$PWD/extra/tips.sh
