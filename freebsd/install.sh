@@ -7,7 +7,7 @@ sudo pw group mod admin -m admin
 sudo pw group mod firefox_users -m admin
 sudo pw group mod firefox_users -m administrator
 
-sudo pkg install        \
+sudo pkg install -y     \
 bash                    \
 bhyve-firmware          \
 dmenu                   \

@@ -1,6 +1,23 @@
 #!/usr/bin/env bash
-##FILES=$(git ls-files)
-for f in ".xinitrc" ".zshrc" ".bashrc" ".dataprinter" ".mc" ".screenrc" ".vimrc" ".Xresources" ".i3status.conf" ".tmux.conf" ".perltidyrc" ".i3" ".login_conf"
+
+files="
+.screenrc.sh
+.Xresources
+.bashrc
+.dataprinter
+.i3
+.i3status.conf
+.login_conf
+.mc
+.perltidyrc
+.screenrc
+.tmux.conf
+.vimrc
+.xinitrc
+.zshrc
+"
+
+for f in $files;
     do
         echo "Working on: $f"
         source="$PWD/userhome/files/$f"
@@ -10,15 +27,7 @@ for f in ".xinitrc" ".zshrc" ".bashrc" ".dataprinter" ".mc" ".screenrc" ".vimrc"
             cmd="ln -s $source $destiny"
             `$cmd`
         else
-            if [ -L $destiny ]
-            then
-                echo "[ok!!] $f is link"
-            elif [ -f $destiny ]
-            then
-                echo "[warn]$f is file"
-            elif [ -d $destiny ]
-            then
-                echo "[warn]$f is Directory"
-            fi
+            echo "Error: file already exists in [ $destiny ]"
+            ls -la $destiny
         fi
     done

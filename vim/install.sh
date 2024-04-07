@@ -8,7 +8,7 @@ then
     then
         mkdir $HOME/.vim
     fi
-        ln -s "$HOME/dotfiles/vim/colors" "$HOME/.vim/colors"
+    ln -s "$HOME/dotfiles/vim/colors" "$HOME/.vim/colors"
 fi
 
-source $PWD/vim/vundle/install.sh
+$PWD/vim/vundle/install.sh
