@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+ln -s $PWD/userhome/files/picom.conf ~/.config/picom.conf
+
 files="
 .screenrc.sh
 .Xresources
