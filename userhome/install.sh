@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 
+# install picom config
 ln -s $PWD/userhome/files/picom.conf ~/.config/picom.conf
+
+# install compton config
+ln -s $PWD/userhome/files/compton.conf ~/.config/compton.conf
 
 files="
 .screenrc.sh
