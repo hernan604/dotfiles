@@ -64,8 +64,8 @@ static Key keys[] = {
   /* modifier            key        function        argument */
   { MODKEY,              XK_d,      spawn,          {.v = dmenucmd } },
 /*  { MODKEY|ShiftMask,    XK_Return, spawn,          {.v = termcmd } }, */
-  { MODKEY|ShiftMask,    XK_Return, spawn,          SHCMD ("xterm -bg black -fg white -fa 'Gohu GohuFont' -fs 11")},
-  { MODKEY,              XK_Return, spawn,          SHCMD ("tabbed -t black -T white -u black -U white -c xterm -fa 'Gohu GohuFont' -fs 9 -bg 'rgb:00/00/00' -fg 'rgb:DE/DE/DE' -into")},
+  { MODKEY,              XK_Return, spawn,          SHCMD ("xterm -fa 'Gohu GohuFont' -fs 9 -bg 'rgb:00/00/00' -fg 'rgb:DE/DE/DE'")},
+  { MODKEY|ShiftMask,    XK_Return, spawn,          SHCMD ("$HOME/dotfiles/tabbed/tabbed -t black -T white -u black -U white -c xterm -fa 'Gohu GohuFont' -fs 9 -bg 'rgb:00/00/00' -fg 'rgb:DE/DE/DE' -into")},
   { MODKEY,              XK_l,      spawn,          SHCMD ("slock")},
   { MODKEY,              XK_b,      togglebar,      {0} },
   { MODKEY,              XK_Left,   focusstack,     {.i = +1 } },
