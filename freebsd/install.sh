@@ -20,17 +20,19 @@ gohufont                \
 grub2-bhyve             \
 i3                      \
 i3lock                  \
+slock                   \
 mc                      \
 rexima                  \
+tabbed                  \
 tigervnc-viewer         \
 vim                     \
 vm-bhyve                \
 webcamd                 \
+wifibox                 \
 xf86-input-libinput     \
 xf86-input-synaptics    \
 xorg                    \
 xterm                   \
-wifibox                 \
 zsh                     \
 
 # clone antigen for zsh
