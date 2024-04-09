@@ -1,8 +1,20 @@
-{
-    colored        => 1,
-    hash_separator => ':  ',
-    return_value   => 'pass',
-    use_prototypes => 1,
-    caller_info    => 1,
-#   filters        => { -external => [ 'DateTime', 'DB', 'JSON' ], },
-}
+# 	old style .dataprinter:
+#   {
+#   	colored        => 1,
+#   	hash_separator => ':  ',
+#   	return_value   => 'pass',
+#   	use_prototypes => 1,
+#   	caller_info    => 1,
+#   #   filters        => { -external => [ 'DateTime', 'DB', 'JSON' ], },
+#   }
+
+caller_info = 1
+colored = 1
+# filters = DateTime, DB, JSON
+hash_separator = ':  '
+return_value = pass
+use_prototypes = 1
+
+
+array_max      = 10000
+hash_max       = 10000

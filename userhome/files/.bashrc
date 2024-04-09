@@ -2,7 +2,8 @@ echo "initializing bashrc ..."
 # PERLBREW
 export EDITOR=vim
 source ~/perl5/perlbrew/etc/bashrc
-export PERL_CPANM_OPT='--mirror http://mirror.nbtelecom.com.br/CPAN/ --mirror http://linorg.usp.br/CPAN/ --mirror http://www.cpan.org'
+#export PERL_CPANM_OPT='--mirror http://www.cpan.org --mirror http://mirror.nbtelecom.com.br/CPAN/ --mirror http://linorg.usp.br/CPAN/'
+export PERL_CPANM_OPT='--mirror http://www.cpan.org'
 
 if [[ -e $HOME/.user.env ]]
     then
@@ -231,6 +232,13 @@ if [[ -e /usr/local/bin/setxkbmap ]] ; then
     setxkbmap -layout br 
 fi
 #setxkbmap -layout br -variant thinkpad
+
 if [[ -e $HOME/.bashrc_custom ]] ; then
     source $HOME/.bashrc_custom
 fi
+
+if [[ -e ~/.plenv ]] ; then
+  # plenv initialization
+  export PATH="$HOME/.plenv/bin:$PATH"
+  eval "$(plenv init -)"
+; fi 

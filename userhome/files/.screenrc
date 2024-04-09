@@ -7,10 +7,10 @@ defscrollback 50000
 
 bindkey "^[Od" prev  # change window with ctrl-left
 bindkey "^[Oc" next  # change window with ctrl-right
-#escape ^Bb
+escape ^Bb
 
 hardstatus alwayslastline
-hardstatus string "%{= ky}%-Lw%{=r}%20>%n %t%{= ky}%+Lw %{= ky}%-=| %{= kw}%M%d %c%{-} %{=r} ${USER}@%H "
+hardstatus string "%{= kg}%-Lw%{=r}%20>%n %t%{= kg}%+Lw %{= kg}%-=| %{= kw}%M%d %c%{-} %{=r} ${USER}@%H "
 
 #screen -t EXAMPLE 0 $HOME/.screenrc.sh screen00
 source ~/.screenrc_custom
@@ -28,3 +28,4 @@ source ~/.screenrc_custom
 
 vbell "off"
 utf8
+unsetenv PROMPT_COMMAND

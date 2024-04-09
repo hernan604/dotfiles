@@ -28,10 +28,18 @@ if has("gui_running") || &t_Co == 256
   hi NonText      ctermfg=152  ctermbg=0  cterm=bold
 
   " highlight groups <<<
-  hi Cursor       ctermfg=66   ctermbg=222
-  hi CursorColumn ctermfg=0    ctermbg=190
-  hi CursorLine   ctermfg=0    ctermbg=190  cterm=none
-  hi ColorColumn  ctermfg=0    ctermbg=190  cterm=none
+  hi Cursor       ctermfg=199   ctermbg=190
+  hi CursorColumn ctermfg=255    ctermbg=237
+  hi CursorLine   ctermfg=255    ctermbg=237  cterm=none
+  hi ColorColumn  ctermfg=0    ctermbg=199  cterm=none
+
+  hi VertSplit    ctermfg=255  ctermbg=255  cterm=none
+  hi StatusLine   ctermfg=1    ctermbg=0   cterm=reverse,bold
+  hi StatusLineNC ctermfg=0    ctermbg=255  cterm=none
+ "hi VertSplit    ctermfg=240  ctermbg=240  cterm=none
+ "hi StatusLine   ctermfg=255    ctermbg=0   cterm=reverse,bold
+ "hi StatusLineNC ctermfg=255    ctermbg=240  cterm=none
+
  "hi DiffAdd                   ctermbg=4
  "hi DiffChange                ctermbg=5
  "hi DiffDelete   ctermfg=12   ctermbg=6
@@ -60,14 +68,11 @@ if has("gui_running") || &t_Co == 256
  "hi SpellCap                  ctermbg=12
  "hi SpellLocal                ctermbg=14
  "hi SpellRare                 ctermbg=13
-  hi StatusLine   ctermfg=199    ctermbg=255   cterm=reverse,bold
-  hi StatusLineNC ctermfg=255    ctermbg=240  cterm=none
   hi TabLine      ctermfg=250  ctermbg=237  cterm=underline
   hi TabLineFill               ctermbg=237  cterm=none
  "hi TabLineSel   ctermfg=167  ctermbg=238
  "hi TabLineSel                             cterm=bold
   hi Title        ctermfg=167               cterm=bold
-  hi VertSplit    ctermfg=0  ctermbg=190  cterm=none
   hi Visual       ctermfg=0  ctermbg=190
   hi VisualNOS                              cterm=bold,underline
   hi WarningMsg   ctermfg=209
