@@ -8,6 +8,21 @@ antigen bundle zsh-users/zsh-autosuggestions
 
 antigen apply
 
+#setxkbmap -layout br -variant thinkpad
+setxkbmap -layout us -variant intl
+xset r rate 250 50
+
+BASHRC_CUSTOM="~/.bashrc_custom"
+if [[ -f $BASHRC_CUSTOM ]]; then
+    source $BASHRC_CUSTOM
+fi
+
+if [[ -f "$HOME/perl5/lib/perl5/local/lib.pm" ]]; then
+    eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"
+fi
+
+perl ~/dotfiles/userhome/files/banner.pl
+
 ZSH_THEME="robbyrussell"
 
 if [[ -e /usr/local/bin/setxkbmap ]] ; then
@@ -87,22 +102,23 @@ new_deploy () {
 
 export EDITOR=vim
 
-PERLBREW="~/perl5/perlbrew/etc/bashrc"
+PERLBREW="$HOME/perl5/perlbrew/etc/bashrc"
 if [[ -f $PERLBREW ]]; then
     source $PERLBREW
 fi
 
-export PERL_CPANM_OPT='--mirror http://mirror.nbtelecom.com.br/CPAN/ --mirror http://linorg.usp.br/CPAN/ --mirror http://www.cpan.org'
+# export PERL_CPANM_OPT='--mirror http://www.cpan.org --mirror http://mirror.nbtelecom.com.br/CPAN/ --mirror http://linorg.usp.br/CPAN/ '
+export PERL_CPANM_OPT='--mirror http://www.cpan.org'
 
 # disable perl make dist MYMETA.yml inclusion in distribuition file
 export NO_META=1
 
 #NVM
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-if [[ -f "$NVM_DIR/nvm.sh" ]]; then
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-    nvm use --delete-prefix  --lts
-fi
+#export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+#if [[ -f "$NVM_DIR/nvm.sh" ]]; then
+#    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+#    #nvm use --delete-prefix  --lts --silent
+#fi
 
 _nvm_install() {
     NVM_DIR="$HOME/.nvm"
@@ -119,12 +135,10 @@ _nvm_install() {
 alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
 
 
-if [[ -f ~/.zshrc_custom ]]; then
-    source ~/.zshrc_custom
-fi
 
 
-export TERM='xterm-256color'
+#export TERM='xterm-256color'
+export TERM='screen-256color'
 
 export LANG="en_US.UTF-8"
 export MM_CHARSET="UTF-8"
@@ -138,8 +152,6 @@ CHROME_BIN=chromium-browser
 alias gpob="branch=\$(git branch | grep \* | awk '{print \$2}'); git push origin \$branch"
 
 
-
-
 if [[ -e /usr/local/bin/xsetroot ]] ; then
     perl -e 'my $colors = ["#dd00ee","#d0ed0e","#00bb77","#7700bb","#0077bb","#77bb00","#ed0ed0"]; my $min=0; my $max=scalar @{$colors}; my $sel = $min + int(rand($max - $min)); my $color = $colors->[$sel] ; `xsetroot -solid "$color" `;'
 fi
@@ -150,3 +162,14 @@ alias firefox="sudo -u admin -H firefox"
 alias chrome="sudo -u admin -H chrome"
 #alias thunderbird="sudo -u admin -H thunderbird"
 alias transmission="sudo -u admin -H transmission-gtk"
+
+if [[ -f ~/.zshrc_custom ]]; then
+    source ~/.zshrc_custom
+fi
+
+if [[ -e ~/.plenv ]] ; then
+  # plenv initialization
+  export PATH="$HOME/.plenv/bin:$PATH"
+  eval "$(plenv init -)"
+; fi 
+
