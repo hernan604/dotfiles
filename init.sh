@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
-PWD="$(realpath $(realpath $(dirname $0))/../)"
+PWD="$(realpath $(realpath $(dirname $0))/)"
+
 if [[ $(uname) =~ 'FreeBSD' ]]; then
   $PWD/freebsd/install.sh
 fi
+
 $PWD/userhome/install.sh
 $PWD/packages/install.sh
 $PWD/fonts/install.sh
