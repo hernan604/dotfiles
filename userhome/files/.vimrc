@@ -133,8 +133,8 @@ augroup END
 
 " this is to highlight filenames under __DATA__  (get_data_section)
 :call matchadd('CustomYellow', '^@@ .\+')
-:call matchadd('CustomYellow', '__DATA__\|__FILE__\|__PACKAGE__\|__END__')
-:call matchadd('CustomBold', ']\|[\|''\|"\|,\|{\|}\|||\|!\|++\|==\|/\|\.\|;\|=>\|->\|::\|--\|\\\|(\|)')
+:call matchadd('CustomYellow', '__\([A-Za-z0-9_]\+\)__\|__DATA__\|__FILE__\|__PACKAGE__\|__END__')
+:call matchadd('CustomBold', '\~\|#\|\$\|]\|[\|''\|"\|,\|{\|}\|||\|!\|++\|==\|/\|\.\|;\|=>\|->\|::\|--\|\\\|(\|)')
 
 ":call matchadd('CustomRed', '   ')
 :call matchadd('CustomYellow', '\s\+$')
