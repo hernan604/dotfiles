@@ -4,4 +4,5 @@ chmod g+rw /tmp/administrator_Xauthority
 xrandr --dpi 220
 redshift &
 synclient TapButton3=2
-exec i3
+exec ~/dotfiles/dwm-6.3/dwm
+#exec i3

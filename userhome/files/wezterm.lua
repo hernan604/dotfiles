@@ -44,7 +44,7 @@ config.window_background_gradient = {
 
  
 -- For example, changing the color scheme:
-config.color_scheme = 'Apple Classic'
+config.color_scheme = 'Builtin Dark'
 -- config.color_scheme = 'Mathias'
 
 

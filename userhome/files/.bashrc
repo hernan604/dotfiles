@@ -241,4 +241,4 @@ if [[ -e ~/.plenv ]] ; then
   # plenv initialization
   export PATH="$HOME/.plenv/bin:$PATH"
   eval "$(plenv init -)"
-; fi 
+fi 
