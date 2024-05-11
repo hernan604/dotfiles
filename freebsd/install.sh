@@ -33,7 +33,8 @@ xf86-input-libinput     \
 xf86-input-synaptics    \
 xorg                    \
 xterm                   \
-zsh                     \
+acpi_call               \
+zsh
 
 # clone antigen for zsh
 cd ~/ ; git clone git@github.com:zsh-users/antigen.git
