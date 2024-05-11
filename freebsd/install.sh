@@ -9,6 +9,7 @@ sudo pw group mod firefox_users -m administrator
 
 sudo pkg install -y     \
 bash                    \
+beadm                   \
 bhyve-firmware          \
 dmenu                   \
 drm-515-kmod            \
