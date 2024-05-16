@@ -41,7 +41,7 @@ cd ~/ ; git clone git@github.com:zsh-users/antigen.git
 # configure bhyve
 sudo vm init
 sudo vm switch create -a 192.168.8.1/24 public
-sudo vm switch add public eth0
+sudo vm switch add public re0
 sudo vm switch add public wlan0
 mkdir ~/bhyve/
 sudo cp /usr/local/share/examples/vm-bhyve/* ~/bhyve/.templates/
