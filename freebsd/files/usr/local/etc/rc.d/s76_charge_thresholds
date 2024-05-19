@@ -1,0 +1,51 @@
+#!/bin/sh
+
+# PROVIDE: s76_charge_thresholds
+# REQUIRE: FILESYSTEMS sysctl kld acpi_call
+# BEFORE: LOGIN
+# KEYWORD: nojail 
+
+. /etc/rc.subr 
+
+name="s76_charge_thresholds" 
+rcvar="${name}_enable"
+
+start_cmd="${name}_start" 
+stop_cmd=":" 
+
+load_rc_config $name 
+: ${s76_charge_thresholds_enable:=no}
+: ${s76_charge_thresholds_stop_at:=80}
+: ${s76_charge_thresholds_start_at:=50}
+: ${s76_charge_thresholds_quiet:=no}
+
+checkyesno ${name}_quiet || acpi_verbose_flag="-v"
+
+acpi_cmd_set="/usr/local/sbin/acpi_call ${acpi_verbose_flag} -p \_SB.PCI0.LPCB.EC0.SBCT"
+acpi_cmd_get="/usr/local/sbin/acpi_call ${acpi_verbose_flag} -p \_SB.PCI0.LPCB.EC0.GBCT"
+
+s76_ct_get_current()
+{
+    if ! checkyesno ${name}_quiet ; then
+       # read current settings 
+       ${acpi_cmd_get} -i 1
+       ${acpi_cmd_get} -i 0
+    fi
+}
+
+s76_charge_thresholds_start() 
+{
+    echo "S76 Charge Thresholds set to ${s76_charge_thresholds_start_at} - ${s76_charge_thresholds_stop_at}"
+   
+    # read current settings 
+    s76_ct_get_current
+    
+    # set new levels
+    ${acpi_cmd_set} -i 1 -i ${s76_charge_thresholds_stop_at}
+    ${acpi_cmd_set} -i 0 -i ${s76_charge_thresholds_start_at}
+
+    # read again to confirm change
+    s76_ct_get_current
+}
+
+run_rc_command "$1" 
