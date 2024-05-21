@@ -11,6 +11,7 @@ antigen apply
 #setxkbmap -layout br -variant thinkpad
 setxkbmap -layout us -variant intl
 xset r rate 250 50
+xset s on -dpms # power monitor down when idle / screensaver
 
 BASHRC_CUSTOM="~/.bashrc_custom"
 if [[ -f $BASHRC_CUSTOM ]]; then
