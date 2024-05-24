@@ -67,7 +67,7 @@ static Key keys[] = {
   { MODKEY,              XK_Return, spawn,          SHCMD ("xterm -fa 'Gohu GohuFont' -fs 9 -bg 'rgb:00/00/00' -fg 'rgb:DE/DE/DE'")},
 /*  { MODKEY|ShiftMask,    XK_Return, spawn,          SHCMD ("$HOME/dotfiles/tabbed/tabbed -t black -T white -u black -U white -c xterm -fa 'Gohu GohuFont' -fs 9 -bg 'rgb:44/44/44' -fg 'rgb:DE/DE/DE' -into")}, */
   { MODKEY|ShiftMask,    XK_Return, spawn,          SHCMD ("$HOME/dotfiles/tabbed/tabbed.sh")},
-  { MODKEY,              XK_l,      spawn,          SHCMD ("slock")},
+  { MODKEY,              XK_l,      spawn,          SHCMD ("$HOME/dotfiles/tabbed/screensaver.sh")},
   { MODKEY,              XK_b,      togglebar,      {0} },
   { MODKEY,              XK_Left,   focusstack,     {.i = +1 } },
   { MODKEY,              XK_Right,  focusstack,     {.i = -1 } },
