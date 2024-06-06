@@ -7,7 +7,7 @@ defscrollback 50000
 
 bindkey "^[Od" prev  # change window with ctrl-left
 bindkey "^[Oc" next  # change window with ctrl-right
-escape ^Bb
+escape ^Aa
 
 hardstatus alwayslastline
 hardstatus string "%{= kg}%-Lw%{=r}%20>%n %t%{= kg}%+Lw %{= kg}%-=| %{= kw}%M%d %c%{-} %{=r} ${USER}@%H "
